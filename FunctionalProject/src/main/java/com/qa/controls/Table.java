@@ -15,7 +15,7 @@ public enum Table {
 
 	private static final Logger LOGGER = LogManager.getLogger();
 
-	Table(String description) {
+	private Table(String description) {
 		this.description = description;
 	}
 
@@ -33,7 +33,7 @@ public enum Table {
 		Table table;
 		while (true) {
 			try {
-				table = Table.valueOf(userIn.toString().toUpperCase());
+				table = Table.valueOf(userIn.getString().toUpperCase());
 				break;
 			} catch (IllegalArgumentException e) {
 				LOGGER.error("Invalid selection, please try that again");

@@ -7,7 +7,7 @@ import com.qa.tools.Input;
 
 public enum Action {
 
-	ADD("Create a new entry"), UPDATE("Change an existing entry"), DELETE("Remove an entry"), VIEW("View all entries");
+	ADD("Create a new entry"), UPDATE("Change an existing entry"), DELETE("Remove an entry"), VIEW("View all entries"), RETURN("Exit the system");
 
 	public static final Logger LOGGER = LogManager.getLogger();
 	private String description;

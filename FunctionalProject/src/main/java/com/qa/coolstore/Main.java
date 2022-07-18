@@ -1,16 +1,16 @@
 package com.qa.coolstore;
 
-import com.qa.database.SQLConnector;
-import com.qa.database.Test;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
+	
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public static void main(String[] args) {
-		SQLConnector connector = new SQLConnector("root","Apple.Bob1");
-		connector.connectDB();
-		Test test2 = new Test();
-		test2.addCustomer(connector);
-		
+		CoolStore system = new CoolStore();
+		system.startSystem();
+		LOGGER.info("Thank you, goodbye!");
 	}
 
 }

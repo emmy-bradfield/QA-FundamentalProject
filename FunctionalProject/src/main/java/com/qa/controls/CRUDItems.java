@@ -2,9 +2,15 @@ package com.qa.controls;
 
 import java.util.List;
 
+import com.qa.database.DBItem;
 import com.qa.objects.Item;
+import com.qa.tools.Input;
 
 public class CRUDItems implements CRUD<Item>{
+
+	public CRUDItems(DBItem itemDB, Input userIn) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Item add() {

@@ -1,4 +1,25 @@
-package com.qa.database;
+package codesnippets;
+
+public class PastedCode {
+	
+	/* public static Connection connect() {
+	Connection useDB = null;
+	try {
+		useDB = DriverManager.getConnection(localhost, user, password);
+		System.out.println("Connected successfully");
+	} catch (SQLException e) {
+		LOGGER.debug("Unable to connect");
+		LOGGER.debug(e.getStackTrace());
+		e.printStackTrace();
+	}
+	return useDB;
+} */
+	
+	/* this.localhost = "jdbc:mysql://localhost:3306/storeDB";
+		this.user = user;
+		this.password = password; */
+
+	/*package com.qa.database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,4 +74,7 @@ public class Test {
 		
 	}
 
+}
+*/
+	
 }
