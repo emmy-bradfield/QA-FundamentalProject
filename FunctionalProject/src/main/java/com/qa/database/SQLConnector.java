@@ -14,16 +14,28 @@ public class SQLConnector {
 	String localhost;
 	String user;
 	String password;
-	SQLConnector connector;
+	private static SQLConnector connection;
 
-	// Constructor
+	// Constructors
+	public SQLConnector() {
+		this.localhost = "jdbc:mysql://localhost:3306/storeDB";
+		this.user = "root";
+		this.password = "Apple.Bob1";
+	}
+	
 	public SQLConnector(String user, String password) {
 		this.localhost = "jdbc:mysql://localhost:3306/storeDB";
 		this.user = user;
 		this.password = password;
 	}
+	
+	public static SQLConnector connect() {
+		connection = new SQLConnector();
+		return connection;
+		
+	}
 
-	public Connection connectDB() {
+	/* public static Connection connect() {
 		Connection useDB = null;
 		try {
 			useDB = DriverManager.getConnection(localhost, user, password);
@@ -34,6 +46,6 @@ public class SQLConnector {
 			e.printStackTrace();
 		}
 		return useDB;
-	}
+	} */
 
 }

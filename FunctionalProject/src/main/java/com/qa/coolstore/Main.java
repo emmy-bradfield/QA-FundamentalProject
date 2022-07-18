@@ -1,4 +1,4 @@
-package com.qa.runner;
+package com.qa.coolstore;
 
 import com.qa.database.SQLConnector;
 import com.qa.database.Test;
