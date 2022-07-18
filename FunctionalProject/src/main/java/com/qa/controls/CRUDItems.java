@@ -2,38 +2,68 @@ package com.qa.controls;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.qa.database.DBCustomer;
 import com.qa.database.DBItem;
+import com.qa.objects.Customer;
 import com.qa.objects.Item;
 import com.qa.tools.Input;
 
 public class CRUDItems implements CRUD<Item>{
+	
+	public static final Logger LOGGER = LogManager.getLogger();
+
+	private DBItem dbitem;
+	private Input input;
 
 	public CRUDItems(DBItem itemDB, Input userIn) {
-		// TODO Auto-generated constructor stub
+		super();
+		this.dbitem = itemDB;
+		this.input = userIn;
 	}
+	
+	public CRUDItems() {}
 
 	@Override
 	public Item add() {
-		// TODO Auto-generated method stub
-		return null;
+		LOGGER.info("Please enter the product name");
+		String name = input.getString();
+		LOGGER.info("Please enter the product cost");
+		Double cost = input.getDouble();
+		Item item = dbitem.add(new Item(name, cost));
+		LOGGER.info("Product created");
+		return item;
 	}
 
 	@Override
 	public List<Item> view() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Item> items = dbitem.viewAll();
+		for (Item item : items) {
+			LOGGER.info(item);
+		}
+		return items;
 	}
 
 	@Override
 	public int delete() {
-		// TODO Auto-generated method stub
-		return 0;
+		LOGGER.info("Please enter the id of the product you would like to delete");
+		Long id = input.getLong();
+		return dbitem.delete(id);
 	}
 
 	@Override
 	public Item update() {
-		// TODO Auto-generated method stub
-		return null;
+		LOGGER.info("Please enter the id of the product you would like to update");
+		Long id = input.getLong();
+		LOGGER.info("Please enter it's name");
+		String name = input.getString();
+		LOGGER.info("Please enter a cost in GBP");
+		Double cost = input.getDouble();
+		Item item = dbitem.update(new Item(id, name, cost));
+		LOGGER.info("Product Updated");
+		return item;
 	}
 
 }

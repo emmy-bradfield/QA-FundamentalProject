@@ -99,7 +99,7 @@ public class DBCustomer implements DB<Customer> {
 	@Override
 	public int delete(long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM customers WHERE customerID = ?");) {
+				PreparedStatement statement = connection.prepareStatement("DELETE FROM Customers WHERE customerID = ?");) {
 			statement.setLong(1, id);
 			return statement.executeUpdate();
 		} catch (Exception e) {

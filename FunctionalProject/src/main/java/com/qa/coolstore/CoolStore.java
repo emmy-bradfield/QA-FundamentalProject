@@ -20,16 +20,16 @@ public class CoolStore {
 	public static final Logger LOGGER = LogManager.getLogger();
 	private final Input userIn;
 	private final CRUDCustomer customers;
-	//private final CRUDItems items;
+	private final CRUDItems items;
 	//private final CRUDOrders orders;
 
 	public CoolStore() {
 		this.userIn = new Input();
 		final DBCustomer custDB = new DBCustomer();
-		//final DBItem itemDB = new DBItem();
+		final DBItem itemDB = new DBItem();
 		//final DBOrder orderDB = new DBOrder();
 		this.customers = new CRUDCustomer(custDB, userIn);
-		//this.items = new CRUDItems(itemDB, userIn);
+		this.items = new CRUDItems(itemDB, userIn);
 		//this.orders = new CRUDOrders(orderDB, userIn);
 	}
 
@@ -59,7 +59,7 @@ public class CoolStore {
 				active = this.customers;
 				break;
 			case ITEMS:
-				//active = this.items;
+				active = this.items;
 				break;
 			case ORDERS:
 				//active = this.orders;

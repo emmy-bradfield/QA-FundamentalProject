@@ -1,45 +1,105 @@
-20220718 15:45:32 INFO  [main] coolstore.CoolStore CoolStore.java37 - Welcome to CoolStore Inventory and Order Management System
-20220718 15:45:32 INFO  [main] coolstore.CoolStore CoolStore.java42 - Which entity would you like to use?
-20220718 15:45:32 INFO  [main] controls.Table Table.java28 - CUSTOMERS - Add, remove, update, and view all customers in the database
-20220718 15:45:32 INFO  [main] controls.Table Table.java28 - ITEMS - Add, remove, update, and view all items sold
-20220718 15:45:32 INFO  [main] controls.Table Table.java28 - ORDERS - Add, remove, update, cost, and delete all placed orders
-20220718 15:45:32 INFO  [main] controls.Table Table.java28 - STOP - To exit the system
-20220718 15:45:34 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
-20220718 15:45:34 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
-20220718 15:45:34 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
-20220718 15:45:34 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
-20220718 15:45:34 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
-20220718 15:45:34 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
-20220718 15:45:37 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
-20220718 15:45:37 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
-20220718 15:45:37 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
-20220718 15:45:37 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
-20220718 15:45:37 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
-20220718 15:45:37 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
-20220718 15:45:42 INFO  [main] controls.CRUDCustomer CRUDCustomer.java30 - Please enter a first name
-20220718 15:45:43 INFO  [main] controls.CRUDCustomer CRUDCustomer.java32 - Please enter a surname
-20220718 15:45:45 INFO  [main] controls.CRUDCustomer CRUDCustomer.java35 - Customer created
-20220718 15:45:45 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
-20220718 15:45:45 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
-20220718 15:45:45 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
-20220718 15:45:45 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
-20220718 15:45:46 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
-20220718 15:45:46 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
-20220718 15:45:50 INFO  [main] controls.CRUDCustomer CRUDCustomer.java43 - com.qa.objects.Customer@39a37790
-20220718 15:45:50 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
-20220718 15:45:50 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
-20220718 15:45:50 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
-20220718 15:45:50 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
-20220718 15:45:50 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
-20220718 15:45:50 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
-20220718 15:45:56 INFO  [main] coolstore.CoolStore CoolStore.java42 - Which entity would you like to use?
-20220718 15:45:56 INFO  [main] controls.Table Table.java28 - CUSTOMERS - Add, remove, update, and view all customers in the database
-20220718 15:45:56 INFO  [main] controls.Table Table.java28 - ITEMS - Add, remove, update, and view all items sold
-20220718 15:45:56 INFO  [main] controls.Table Table.java28 - ORDERS - Add, remove, update, cost, and delete all placed orders
-20220718 15:45:56 INFO  [main] controls.Table Table.java28 - STOP - To exit the system
-20220718 15:45:59 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
-20220718 15:45:59 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
-20220718 15:45:59 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
-20220718 15:45:59 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
-20220718 15:45:59 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
-20220718 15:45:59 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:43:23 INFO  [main] coolstore.CoolStore CoolStore.java37 - Welcome to CoolStore Inventory and Order Management System
+20220718 16:43:23 INFO  [main] coolstore.CoolStore CoolStore.java42 - Which entity would you like to use?
+20220718 16:43:23 INFO  [main] controls.Table Table.java28 - CUSTOMERS - Add, remove, update, and view all customers in the database
+20220718 16:43:23 INFO  [main] controls.Table Table.java28 - ITEMS - Add, remove, update, and view all items sold
+20220718 16:43:23 INFO  [main] controls.Table Table.java28 - ORDERS - Add, remove, update, cost, and delete all placed orders
+20220718 16:43:23 INFO  [main] controls.Table Table.java28 - STOP - To exit the system
+20220718 16:43:26 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:43:26 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:43:26 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:43:26 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:43:26 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:43:26 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:43:28 INFO  [main] controls.CRUDCustomer CRUDCustomer.java57 - Please enter the id of the customer you would like to update
+20220718 16:43:30 INFO  [main] controls.CRUDCustomer CRUDCustomer.java59 - Please enter a first name
+20220718 16:43:32 INFO  [main] controls.CRUDCustomer CRUDCustomer.java61 - Please enter a surname
+20220718 16:43:35 DEBUG [main] database.DBCustomer DBCustomer.java60 - java.sql.SQLException: Illegal operation on empty result set.
+20220718 16:43:35 ERROR [main] database.DBCustomer DBCustomer.java61 - Illegal operation on empty result set.
+20220718 16:43:35 INFO  [main] controls.CRUDCustomer CRUDCustomer.java64 - Customer Updated
+20220718 16:43:35 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:43:35 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:43:35 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:43:35 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:43:35 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:43:35 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:43:47 INFO  [main] controls.CRUDCustomer CRUDCustomer.java30 - Please enter a first name
+20220718 16:43:49 INFO  [main] controls.CRUDCustomer CRUDCustomer.java32 - Please enter a surname
+20220718 16:43:51 INFO  [main] controls.CRUDCustomer CRUDCustomer.java35 - Customer created
+20220718 16:43:51 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:43:51 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:43:51 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:43:51 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:43:51 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:43:51 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:43:54 INFO  [main] controls.CRUDCustomer CRUDCustomer.java57 - Please enter the id of the customer you would like to update
+20220718 16:43:57 INFO  [main] controls.CRUDCustomer CRUDCustomer.java59 - Please enter a first name
+20220718 16:43:58 INFO  [main] controls.CRUDCustomer CRUDCustomer.java61 - Please enter a surname
+20220718 16:44:00 INFO  [main] controls.CRUDCustomer CRUDCustomer.java64 - Customer Updated
+20220718 16:44:00 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:44:00 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:00 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:00 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:00 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:00 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:04 INFO  [main] controls.CRUDCustomer CRUDCustomer.java43 - com.qa.objects.Customer@b38c7839
+20220718 16:44:04 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:44:04 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:04 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:04 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:04 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:04 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:06 INFO  [main] controls.CRUDCustomer CRUDCustomer.java50 - Please enter the id of the customer you would like to delete
+20220718 16:44:09 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with customers:
+20220718 16:44:09 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:09 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:09 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:09 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:09 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:13 INFO  [main] coolstore.CoolStore CoolStore.java42 - Which entity would you like to use?
+20220718 16:44:13 INFO  [main] controls.Table Table.java28 - CUSTOMERS - Add, remove, update, and view all customers in the database
+20220718 16:44:13 INFO  [main] controls.Table Table.java28 - ITEMS - Add, remove, update, and view all items sold
+20220718 16:44:13 INFO  [main] controls.Table Table.java28 - ORDERS - Add, remove, update, cost, and delete all placed orders
+20220718 16:44:13 INFO  [main] controls.Table Table.java28 - STOP - To exit the system
+20220718 16:44:15 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
+20220718 16:44:15 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:15 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:15 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:15 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:15 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:19 INFO  [main] controls.CRUDItems CRUDItems.java44 - com.qa.objects.Item@dd352b1d
+20220718 16:44:19 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
+20220718 16:44:19 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:19 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:19 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:19 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:19 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:24 INFO  [main] controls.CRUDItems CRUDItems.java58 - Please enter the id of the product you would like to update
+20220718 16:44:25 INFO  [main] controls.CRUDItems CRUDItems.java60 - Please enter it's name
+20220718 16:44:27 INFO  [main] controls.CRUDItems CRUDItems.java62 - Please enter a cost in GBP
+20220718 16:44:29 INFO  [main] controls.CRUDItems CRUDItems.java65 - Product Updated
+20220718 16:44:29 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
+20220718 16:44:29 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:29 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:29 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:29 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:29 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:32 INFO  [main] controls.CRUDItems CRUDItems.java44 - com.qa.objects.Item@3751fcc6
+20220718 16:44:32 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
+20220718 16:44:32 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:32 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:32 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:32 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:32 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:34 INFO  [main] controls.CRUDItems CRUDItems.java51 - Please enter the id of the product you would like to delete
+20220718 16:44:36 INFO  [main] coolstore.CoolStore CoolStore.java73 - What would you like to do with items:
+20220718 16:44:36 INFO  [main] controls.Action Action.java25 - ADD - Create a new entry
+20220718 16:44:36 INFO  [main] controls.Action Action.java25 - UPDATE - Change an existing entry
+20220718 16:44:36 INFO  [main] controls.Action Action.java25 - DELETE - Remove an entry
+20220718 16:44:36 INFO  [main] controls.Action Action.java25 - VIEW - View all entries
+20220718 16:44:36 INFO  [main] controls.Action Action.java25 - RETURN - Exit the system
+20220718 16:44:39 INFO  [main] coolstore.CoolStore CoolStore.java42 - Which entity would you like to use?
+20220718 16:44:39 INFO  [main] controls.Table Table.java28 - CUSTOMERS - Add, remove, update, and view all customers in the database
+20220718 16:44:39 INFO  [main] controls.Table Table.java28 - ITEMS - Add, remove, update, and view all items sold
+20220718 16:44:39 INFO  [main] controls.Table Table.java28 - ORDERS - Add, remove, update, cost, and delete all placed orders
+20220718 16:44:39 INFO  [main] controls.Table Table.java28 - STOP - To exit the system
+20220718 16:44:42 INFO  [main] coolstore.Main Main.java13 - Thank you, goodbye!
