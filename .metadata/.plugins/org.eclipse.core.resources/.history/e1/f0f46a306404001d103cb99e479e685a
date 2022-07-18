@@ -1,0 +1,31 @@
+package com.qa.database;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class tempExecuteQueryTest {
+	Integer i = 0;
+
+
+	Scanner scan = new Scanner(System.in);
+	
+	public void addCustomer() {
+		Connection useDB = null;
+		i = i+1;
+		System.out.println("Please enter the forename of the customer you wish to add\n>> ");
+		String customerForename = scan.nextLine();
+		System.out.println("Please enter the surname of the customer you wish to add\n>> ");
+		String customerSurname = scan.nextLine();
+		try {
+			Statement state = useDB.createStatement("INSERT INTO Customers (customerForename, customerSurname) VALUES (%s, %s)",customerForename,customerSurname);
+			state.executeUpdate(null);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

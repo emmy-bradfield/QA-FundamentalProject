@@ -1,0 +1,37 @@
+package com.qa.database;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Test {
+	Integer i = 0;
+
+	Logger LOGGER = LogManager.getLogger();
+
+	Scanner scan = new Scanner(System.in);
+	
+	public void addCustomer(SQLConnector connector) {
+		i = i+1;
+		System.out.print("Please enter the forename of the customer you wish to add\n>> ");
+		String customerForename = scan.nextLine();
+		System.out.print("Please enter the surname of the customer you wish to add\n>> ");
+		String customerSurname = scan.nextLine();
+		String CustomerSyntax = ("INSERT INTO Customers VALUES (" + i + ", " + customerForename + ", " + customerSurname + ");");
+		try (Connection con = connector.connectDB(); ){
+			Statement state = con.createStatement();
+			state.executeUpdate(CustomerSyntax);
+			System.out.println(customerForename + " " + customerSurname + " successfully added!");
+		} catch (SQLException e) {
+			LOGGER.debug("Unable to add");
+			LOGGER.debug(e.getStackTrace());
+			e.printStackTrace();
+		}
+		
+	}
+
+}
