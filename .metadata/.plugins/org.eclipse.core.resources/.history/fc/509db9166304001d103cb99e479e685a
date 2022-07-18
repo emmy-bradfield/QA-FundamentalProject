@@ -1,0 +1,11 @@
+package com.qa.database;
+
+import java.util.Scanner;
+
+public class tempExecuteQueryTest {
+	
+	public void addCustomer() {
+		Scanner scan = new Scanner(System.in);
+	}
+
+}
