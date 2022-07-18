@@ -1,0 +1,38 @@
+package com.qa.database;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class tempExecuteQueryTest {
+	Integer i = 0;
+
+	Logger LOGGER = LogManager.getLogger();
+
+	Scanner scan = new Scanner(System.in);
+	
+	public void addCustomer() {
+		Connection useDB = null;
+		i = i+1;
+		System.out.println("Please enter the forename of the customer you wish to add\n>> ");
+		String customerForename = scan.nextLine();
+		System.out.println("Please enter the surname of the customer you wish to add\n>> ");
+		String customerSurname = scan.nextLine();
+		String CustomerSyntax = ("INSERT INTO Customers (customerForename, customerSurname) VALUES (%s, %s)".format(customerForename, customerSurname));
+		try {
+			Statement state = useDB.createStatement();
+			state.executeUpdate(CustomerSyntax);
+			System.out.println(customerForename + " " + customerSurname + " successfully added!");
+		} catch (SQLException e) {
+			LOGGER.debug("Unable to connect");
+			LOGGER.debug(e.getStackTrace());
+			e.printStackTrace();
+		}
+		
+	}
+
+}

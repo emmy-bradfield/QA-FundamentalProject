@@ -1,0 +1,46 @@
+package com.qa.database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
+public class SQLConnector {
+
+	Logger LOGGER = LogManager.getLogger();
+
+	// Attributes
+	private String localhost;
+	private String user;
+	private String password;
+
+	// Constructor
+	public SQLConnector(String user, String password) {
+		this.localhost = "jdbc:mysql://localhost:3306/storedb";
+		this.user = user;
+		this.password = password;
+	}
+
+	public void connectDB() {
+		Connection useDB = null;
+		try {
+			useDB = DriverManager.getConnection(localhost, user, password);
+			System.out.println("Connected successfully");
+		} catch (SQLException e) {
+			LOGGER.debug("Unable to connect");
+			LOGGER.debug(e.getStackTrace());
+		} finally {
+			try {
+				if(useDB != null) {
+					useDB.close();
+					System.out.println("Connection complete");
+				}
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	
+	}
+
+}
