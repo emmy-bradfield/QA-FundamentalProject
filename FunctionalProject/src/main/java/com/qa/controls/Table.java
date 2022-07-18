@@ -36,7 +36,7 @@ public enum Table {
 				table = Table.valueOf(userIn.getString().toUpperCase());
 				break;
 			} catch (IllegalArgumentException e) {
-				LOGGER.error("Invalid selection, please try that again");
+				LOGGER.error("Invalid selection, please try again");
 			}
 		}
 		return table;

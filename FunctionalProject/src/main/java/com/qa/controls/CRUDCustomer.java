@@ -28,10 +28,10 @@ public class CRUDCustomer implements CRUD<Customer>{
 	@Override
 	public Customer add() {
 		LOGGER.info("Please enter a first name");
-		String firstName = input.getString();
+		String forename = input.getString();
 		LOGGER.info("Please enter a surname");
 		String surname = input.getString();
-		Customer customer = dbcustomer.add(new Customer(firstName, surname));
+		Customer customer = dbcustomer.add(new Customer(forename, surname));
 		LOGGER.info("Customer created");
 		return customer;
 	}

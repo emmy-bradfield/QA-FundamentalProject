@@ -17,7 +17,7 @@ public enum Action {
 	}
 
 	public String getDescription() {
-		return description;
+		return this.name() + " - " + this.description;
 	}
 
 	public static void printActions() {
@@ -30,7 +30,7 @@ public enum Action {
 		Action action = null;
 		do {
 			try {
-				action = Action.valueOf(userIn.toString().toUpperCase());
+				action = Action.valueOf(userIn.getString().toUpperCase());
 			} catch (IllegalArgumentException e) {
 				LOGGER.error("Invalid selection please try again");
 			}

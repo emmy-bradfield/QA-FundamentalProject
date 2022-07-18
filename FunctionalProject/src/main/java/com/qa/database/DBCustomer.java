@@ -21,7 +21,7 @@ public class DBCustomer implements DB<Customer> {
 	public List<Customer> viewAll() {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM customers");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM Customers");) {
 			List<Customer> customers = new ArrayList<>();
 			while (resultSet.next()) {
 				customers.add(modelFromResultSet(resultSet));
@@ -37,7 +37,7 @@ public class DBCustomer implements DB<Customer> {
 	public Customer viewLatest() {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM customers ORDER BY id DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM Customers ORDER BY customerID DESC LIMIT 1");) {
 			resultSet.next();
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -50,7 +50,7 @@ public class DBCustomer implements DB<Customer> {
 	@Override
 	public Customer view(Long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM customers WHERE id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM Customers WHERE customerID = ?");) {
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
@@ -67,7 +67,7 @@ public class DBCustomer implements DB<Customer> {
 	public Customer add(Customer customer) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO customers(first_name, surname) VALUES (?, ?)");) {
+						.prepareStatement("INSERT INTO Customers (customerForename, customerSurname) VALUES (?, ?)");) {
 			statement.setString(1, customer.getForename());
 			statement.setString(2, customer.getSurname());
 			statement.executeUpdate();
@@ -83,7 +83,7 @@ public class DBCustomer implements DB<Customer> {
 	public Customer update(Customer customer) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE customers SET first_name = ?, surname = ? WHERE id = ?");) {
+						.prepareStatement("UPDATE Customers SET customerForename = ?, customerSurname = ? WHERE customerID = ?");) {
 			statement.setString(1, customer.getForename());
 			statement.setString(2, customer.getSurname());
 			statement.setLong(3, customer.getID());
@@ -99,7 +99,7 @@ public class DBCustomer implements DB<Customer> {
 	@Override
 	public int delete(long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM customers WHERE id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("DELETE FROM customers WHERE customerID = ?");) {
 			statement.setLong(1, id);
 			return statement.executeUpdate();
 		} catch (Exception e) {
@@ -111,9 +111,9 @@ public class DBCustomer implements DB<Customer> {
 
 	@Override
 	public Customer modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long id = resultSet.getLong("id");
-		String firstName = resultSet.getString("first_name");
-		String surname = resultSet.getString("surname");
+		Long id = resultSet.getLong("customerID");
+		String firstName = resultSet.getString("customerForename");
+		String surname = resultSet.getString("customerSurname");
 		return new Customer(id, firstName, surname);
 	}
 
