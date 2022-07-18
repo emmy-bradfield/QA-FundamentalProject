@@ -1,0 +1,16 @@
+package com.qa.runner;
+
+import com.qa.database.SQLConnector;
+import com.qa.database.Test;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SQLConnector test = new SQLConnector("root", "Apple.Bob1");
+		test.connectDB();
+		Test test2 = new Test();
+		test2.addCustomer();
+		
+	}
+
+}
