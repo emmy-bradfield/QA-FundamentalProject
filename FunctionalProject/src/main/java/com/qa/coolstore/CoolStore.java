@@ -6,10 +6,12 @@ import org.apache.logging.log4j.Logger;
 import com.qa.controls.Action;
 import com.qa.controls.CRUD;
 import com.qa.controls.CRUDCustomer;
+import com.qa.controls.CRUDInvoice;
 import com.qa.controls.CRUDItems;
 import com.qa.controls.CRUDOrders;
 import com.qa.controls.Table;
 import com.qa.database.DBCustomer;
+import com.qa.database.DBInvoice;
 import com.qa.database.DBItem;
 import com.qa.database.DBOrder;
 import com.qa.tools.Input;
@@ -22,15 +24,19 @@ public class CoolStore {
 	private final CRUDCustomer customers;
 	private final CRUDItems items;
 	private final CRUDOrders orders;
+	public final CRUDInvoice invoices;
+
 
 	public CoolStore() {
 		this.userIn = new Input();
 		final DBCustomer custDB = new DBCustomer();
 		final DBItem itemDB = new DBItem();
 		final DBOrder orderDB = new DBOrder();
+		final DBInvoice invoiceDB = new DBInvoice();
 		this.customers = new CRUDCustomer(custDB, userIn);
 		this.items = new CRUDItems(itemDB, userIn);
 		this.orders = new CRUDOrders(orderDB, userIn);
+		this.invoices = new CRUDInvoice(invoiceDB, userIn);
 	}
 
 	/**
@@ -50,7 +56,6 @@ public class CoolStore {
 			table = Table.getTable(userIn);
 
 			tableAction(table);
-
 		} while (table != Table.STOP);
 	}
 
@@ -75,6 +80,9 @@ public class CoolStore {
 				break;
 			case ORDERS:
 				active = this.orders;
+				break;
+			case INVOICES:
+				active = this.invoices;
 				break;
 			case STOP:
 				return;
@@ -123,4 +131,5 @@ public class CoolStore {
 			break;
 		}
 	}
+	
 }

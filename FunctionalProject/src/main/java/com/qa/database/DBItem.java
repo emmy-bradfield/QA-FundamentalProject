@@ -31,7 +31,9 @@ public class DBItem implements DB<Item>{
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM Items");) {
 			List<Item> items = new ArrayList<>();
 			while (resultSet.next()) {
-				items.add(modelFromResultSet(resultSet));
+				Item item = modelFromResultSet(resultSet);
+				items.add(item);
+				string(item);
 			}
 			return items;
 		} catch (SQLException e) {
@@ -75,7 +77,9 @@ public class DBItem implements DB<Item>{
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
-				return modelFromResultSet(resultSet);
+				Item item = modelFromResultSet(resultSet);
+				string(item);
+				return item;
 			}
 		} catch (Exception e) {
 			LOGGER.debug(e);
@@ -164,6 +168,12 @@ public class DBItem implements DB<Item>{
 		String name = resultSet.getString("itemName");
 		Double cost = resultSet.getDouble("itemCost");
 		return new Item(id, name, cost);
+	}
+
+	@Override
+	public void string(Item item) {
+		String str = "PRODUCT ID #pL-0090-" + item.getId() + " | References " + item.getName() + ", costed at " + item.getCost() + "GBP per unit";
+		System.out.println(str);
 	}
 
 }

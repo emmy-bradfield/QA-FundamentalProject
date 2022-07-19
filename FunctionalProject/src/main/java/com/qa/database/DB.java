@@ -27,5 +27,7 @@ public interface DB<T> {
 	int delete(long id);
 
 	T modelFromResultSet(ResultSet resultSet) throws SQLException;
+	
+	void string(T t);
 
 }

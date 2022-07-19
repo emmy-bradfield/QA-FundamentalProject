@@ -53,9 +53,6 @@ public class CRUDItems implements CRUD<Item> {
 	@Override
 	public List<Item> view() {
 		List<Item> items = dbitem.viewAll();
-		for (Item item : items) {
-			LOGGER.info(item);
-		}
 		return items;
 	}
 

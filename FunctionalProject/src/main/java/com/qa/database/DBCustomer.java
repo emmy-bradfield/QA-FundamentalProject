@@ -31,7 +31,9 @@ public class DBCustomer implements DB<Customer> {
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM Customers");) {
 			List<Customer> customers = new ArrayList<>();
 			while (resultSet.next()) {
-				customers.add(modelFromResultSet(resultSet));
+				Customer customer = modelFromResultSet(resultSet);
+				string(customer);
+				customers.add(customer);
 			}
 			return customers;
 		} catch (SQLException e) {
@@ -76,7 +78,9 @@ public class DBCustomer implements DB<Customer> {
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
-				return modelFromResultSet(resultSet);
+				Customer customer = modelFromResultSet(resultSet);
+				string(customer);
+				return customer;
 			}
 		} catch (Exception e) {
 			LOGGER.debug(e);
@@ -165,6 +169,13 @@ public class DBCustomer implements DB<Customer> {
 		String firstName = resultSet.getString("customerForename");
 		String surname = resultSet.getString("customerSurname");
 		return new Customer(id, firstName, surname);
+	}
+
+	@Override
+	public void string(Customer customer) {
+		String str = "CUSTOMER ID #09C21-" + " | References " + customer.getForename() + " " + customer.getSurname();
+		System.out.println(str);
+		
 	}
 
 }

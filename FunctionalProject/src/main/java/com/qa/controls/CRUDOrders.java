@@ -35,13 +35,17 @@ public class CRUDOrders implements CRUD<Order>{
 
 	@Override
 	public Order add() {
+		LOGGER.info("Please enter the purchase ID");
+		Long pid = userIn.getLong();
 		LOGGER.info("Please enter the order date");
 		Date date = userIn.getDate();
 		LOGGER.info("Please enter the ID for the customer who placed the order");
 		Long custId = userIn.getLong();
 		LOGGER.info("Please enter the ID for the item purchased");
 		Long itemId = userIn.getLong();
-		Order order = dborder.add(new Order(date, custId, itemId));
+		LOGGER.info("Please enter the quantity of the item purchased");
+		Long amount = userIn.getLong();
+		Order order = dborder.add(new Order(pid, date, custId, itemId, amount));
 		LOGGER.info("Order created");
 		return order;
 	}
@@ -55,9 +59,6 @@ public class CRUDOrders implements CRUD<Order>{
 	@Override
 	public List<Order> view() {
 		List<Order> orders = dborder.viewAll();
-		for (Order order : orders) {
-			LOGGER.info(order);
-		}
 		return orders;
 	}
 	
@@ -83,13 +84,17 @@ public class CRUDOrders implements CRUD<Order>{
 	public Order update() {
 		LOGGER.info("Please enter the id of the order you would like to update");
 		Long id = userIn.getLong();
+		LOGGER.info("Please enter the purchase reference ID");
+		Long pid = userIn.getLong();
 		LOGGER.info("Please enter the date it was placed");
 		Date date = userIn.getDate();
 		LOGGER.info("Please enter the ID of the customer who placed it");
 		Long custId = userIn.getLong();
 		LOGGER.info("Please enter the ID of the item which was ordered");
 		Long itemId = userIn.getLong();
-		Order order = dborder.update(new Order(id, date, custId, itemId));
+		LOGGER.info("Please enter the quantity of the item purchased");
+		Long amount = userIn.getLong();
+		Order order = dborder.update(new Order(id, pid, date, custId, itemId, amount));
 		LOGGER.info("Order Updated");
 		return order;
 	}
