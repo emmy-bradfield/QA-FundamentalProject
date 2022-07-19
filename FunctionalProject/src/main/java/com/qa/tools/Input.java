@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class Input {
 
@@ -57,6 +59,22 @@ public class Input {
 			}
 		} while (doubleInput == null);
 		return doubleInput;
+	}
+	
+	public Date getDate() {
+		String input = null;
+		Date dateInput = null;
+		LocalDate date = null;
+		do {
+			try {
+				input = getString();
+				date = LocalDate.parse(input);
+				dateInput = Date.valueOf(date);
+			} catch (NumberFormatException e) {
+				LOGGER.info("Error - Please enter a date");
+			}
+		} while (dateInput == null);
+		return dateInput;
 	}
 
 }

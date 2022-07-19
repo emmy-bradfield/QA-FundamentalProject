@@ -21,16 +21,16 @@ public class CoolStore {
 	private final Input userIn;
 	private final CRUDCustomer customers;
 	private final CRUDItems items;
-	// private final CRUDOrders orders;
+	private final CRUDOrders orders;
 
 	public CoolStore() {
 		this.userIn = new Input();
 		final DBCustomer custDB = new DBCustomer();
 		final DBItem itemDB = new DBItem();
-		// final DBOrder orderDB = new DBOrder();
+		final DBOrder orderDB = new DBOrder();
 		this.customers = new CRUDCustomer(custDB, userIn);
 		this.items = new CRUDItems(itemDB, userIn);
-		// this.orders = new CRUDOrders(orderDB, userIn);
+		this.orders = new CRUDOrders(orderDB, userIn);
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class CoolStore {
 				active = this.items;
 				break;
 			case ORDERS:
-				// active = this.orders;
+				active = this.orders;
 				break;
 			case STOP:
 				return;
