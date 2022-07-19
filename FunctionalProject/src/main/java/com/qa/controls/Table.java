@@ -14,7 +14,8 @@ import com.qa.tools.Input;
 public enum Table {
 	CUSTOMERS("Add, remove, update, and view all customers in the database"),
 	ITEMS("Add, remove, update, and view all items sold"),
-	ORDERS("Add, remove, update, cost, and delete all placed orders"), STOP("To exit the system");
+	ORDERS("Add, remove, update, cost, and delete all placed orders"), STOP("To exit the system"),
+	INVOICES("View all current invoices for placed orders");
 
 	private String description;
 

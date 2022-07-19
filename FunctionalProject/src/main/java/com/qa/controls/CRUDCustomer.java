@@ -54,9 +54,6 @@ public class CRUDCustomer implements CRUD<Customer> {
 	@Override
 	public List<Customer> view() {
 		List<Customer> customers = dbcustomer.viewAll();
-		for (Customer customer : customers) {
-			LOGGER.info(customer);
-		}
 		return customers;
 	}
 

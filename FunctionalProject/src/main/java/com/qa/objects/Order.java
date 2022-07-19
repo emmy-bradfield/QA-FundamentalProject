@@ -3,28 +3,55 @@ package com.qa.objects;
 import java.sql.Date;
 
 public class Order {
-	
+
 	/**
-	 * Class for constructing an Order object to match the SQL database. 
-	 * Includes Getters and Setters to retrieve the object information
+	 * Class for constructing an Order object to match the SQL database. Includes
+	 * Getters and Setters to retrieve the object information
 	 */
-	
+
 	private Long id;
+	private Long pid;
 	private Date date;
 	private Long custID;
 	private Long itemID;
-	
-	public Order(Long id, Date date, Long custID, Long itemID) {
+	private Long amount;
+	private String item;
+	private Double cost;
+
+	public Order(Long id, Long pid, Date date, Long custID, Long itemID, Long amount) {
 		this.setId(id);
+		this.setPid(pid);
 		this.setDate(date);
 		this.setCustID(custID);
 		this.setItemID(itemID);
+		this.setAmount(amount);
 	}
-	
-	public Order(Date date, Long custID, Long itemID) {
+
+	public Order(Long pid, Date date, Long custID, Long itemID, Long amount) {
+		this.setPid(pid);
 		this.setDate(date);
 		this.setCustID(custID);
 		this.setItemID(itemID);
+		this.setAmount(amount);
+	}
+
+	public Order(Long id, Long pid, Date date, String item, Double cost, Long amount) {
+		this.setId(id);
+		this.setPid(pid);
+		this.setDate(date);
+		this.setItem(item);
+		this.setCost(cost);
+		this.setAmount(amount);
+	}
+
+	private void setCost(Double cost) {
+		this.cost = cost;
+		
+	}
+
+	private void setItem(String item) {
+		this.item = item;
+		
 	}
 
 	public Long getId() {
@@ -69,7 +96,7 @@ public class Order {
 		result = prime * result + ((itemID == null) ? 0 : itemID.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -99,12 +126,41 @@ public class Order {
 				return false;
 		} else if (!itemID.equals(other.itemID))
 			return false;
-		if (custID == null) {
-			if (other.itemID != null)
+		if (pid == null) {
+			if (other.pid != null)
 				return false;
-		} else if (!custID.equals(other.custID))
+		} else if (!pid.equals(other.pid))
+			return false;
+		if (amount == null) {
+			if (other.amount != null)
+				return false;
+		} else if (!amount.equals(other.amount))
 			return false;
 		return true;
 	}
-	
+
+	public Long getPid() {
+		return pid;
+	}
+
+	public void setPid(Long pid) {
+		this.pid = pid;
+	}
+
+	public Long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Long amount) {
+		this.amount = amount;
+	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public Double getCost() {
+		return cost;
+	}
+
 }
