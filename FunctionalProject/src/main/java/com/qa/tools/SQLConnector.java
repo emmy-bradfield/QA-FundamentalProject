@@ -1,4 +1,4 @@
-package com.qa.database;
+package com.qa.tools;
 
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +15,14 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 
 public class SQLConnector {
+
+	/**
+	 * Database Connection (JDBC) tool to be used in other packages
+	 * 
+	 * Connects to the SQL database using the properties provided in db.properties
+	 * and the java.sql.Connection class. Includes attributes, constructors, and
+	 * methods to execute, connect, and return connection information
+	 */
 
 	static Logger LOGGER = LogManager.getLogger();
 
@@ -35,25 +43,25 @@ public class SQLConnector {
 		this.user = dbProps.getProperty("db.user", "");
 		this.password = dbProps.getProperty("db.password", "");
 	}
-	
+
 	public SQLConnector() {
 		this("db.properties");
 	}
-	
+
 	public int init(String... paths) {
 		int modified = 0;
-		
+
 		for (String path : paths) {
 			modified += executeSQLFile(path);
 		}
 		return modified;
 	}
-	
+
 	public int executeSQLFile(String file) {
 		int modified = 0;
 		try (Connection connection = this.getConnection();
 				BufferedReader br = new BufferedReader(new FileReader(file));) {
-			String fileAsString = br.lines().reduce((acc,  next) -> acc + next).orElse("");
+			String fileAsString = br.lines().reduce((acc, next) -> acc + next).orElse("");
 			String[] queries = fileAsString.split(";");
 			modified += Stream.of(queries).map(string -> {
 				try (Statement statement = connection.createStatement();) {
@@ -68,23 +76,23 @@ public class SQLConnector {
 		}
 		return modified;
 	}
-	
+
 	public Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(localhost, user, password);
 	}
-	
+
 	private static SQLConnector connection;
-	
+
 	public static SQLConnector connect() {
 		connection = new SQLConnector();
 		return connection;
 	}
-	
+
 	public static SQLConnector connect(String properties) {
 		connection = new SQLConnector(properties);
 		return connection;
 	}
-	
+
 	public static SQLConnector getCurrent() {
 		if (connection == null) {
 			connection = new SQLConnector();

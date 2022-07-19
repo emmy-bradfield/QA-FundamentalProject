@@ -12,10 +12,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.objects.Customer;
+import com.qa.tools.SQLConnector;
 
 public class DBCustomer implements DB<Customer> {
 
 	public static final Logger LOGGER = LogManager.getLogger();
+
+	/**
+	 * Reads all customers from the database
+	 * 
+	 * @return A list of customers
+	 */
 
 	@Override
 	public List<Customer> viewAll() {
@@ -34,10 +41,17 @@ public class DBCustomer implements DB<Customer> {
 		return new ArrayList<>();
 	}
 
+	/**
+	 * Reads the last customer added to the database
+	 * 
+	 * @return a customer
+	 */
+
 	public Customer viewLatest() {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM Customers ORDER BY customerID DESC LIMIT 1");) {
+				ResultSet resultSet = statement
+						.executeQuery("SELECT * FROM Customers ORDER BY customerID DESC LIMIT 1");) {
 			resultSet.next();
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -47,10 +61,18 @@ public class DBCustomer implements DB<Customer> {
 		return null;
 	}
 
+	/**
+	 * Reads a specific customer based on the id provided by the user
+	 * 
+	 * @param ID - the customer ID
+	 * @return a customer
+	 */
+
 	@Override
 	public Customer view(Long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM Customers WHERE customerID = ?");) {
+				PreparedStatement statement = connection
+						.prepareStatement("SELECT * FROM Customers WHERE customerID = ?");) {
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
@@ -62,6 +84,12 @@ public class DBCustomer implements DB<Customer> {
 		}
 		return null;
 	}
+
+	/**
+	 * Creates a customer in the database
+	 * 
+	 * @param customer - takes in a customer object. id will be ignored
+	 */
 
 	@Override
 	public Customer add(Customer customer) {
@@ -79,11 +107,18 @@ public class DBCustomer implements DB<Customer> {
 		return null;
 	}
 
+	/**
+	 * Updates a customer in the database
+	 * 
+	 * @param customer - takes in a customer object, the id field will be used to
+	 *                 update that customer in the database
+	 */
+
 	@Override
 	public Customer update(Customer customer) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection
-						.prepareStatement("UPDATE Customers SET customerForename = ?, customerSurname = ? WHERE customerID = ?");) {
+				PreparedStatement statement = connection.prepareStatement(
+						"UPDATE Customers SET customerForename = ?, customerSurname = ? WHERE customerID = ?");) {
 			statement.setString(1, customer.getForename());
 			statement.setString(2, customer.getSurname());
 			statement.setLong(3, customer.getID());
@@ -96,10 +131,17 @@ public class DBCustomer implements DB<Customer> {
 		return null;
 	}
 
+	/**
+	 * Deletes a customer in the database
+	 * 
+	 * @param id - id of the customer
+	 */
+
 	@Override
 	public int delete(long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM Customers WHERE customerID = ?");) {
+				PreparedStatement statement = connection
+						.prepareStatement("DELETE FROM Customers WHERE customerID = ?");) {
 			statement.setLong(1, id);
 			return statement.executeUpdate();
 		} catch (Exception e) {
@@ -108,6 +150,14 @@ public class DBCustomer implements DB<Customer> {
 		}
 		return 0;
 	}
+
+	/**
+	 * Creates a new object Customer from the ResultSet data in the SQL Database
+	 * 
+	 * @param ResultSet
+	 * @throws SQLException
+	 * @return Customer
+	 */
 
 	@Override
 	public Customer modelFromResultSet(ResultSet resultSet) throws SQLException {

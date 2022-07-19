@@ -6,20 +6,27 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Input {
-	
+
+	/**
+	 * User input/scanner tool to be used in other classes
+	 * 
+	 * Reads input from the user with the java.util.Scanner class, as well as having
+	 * methods to convert the user input to a Long, String, or Double
+	 */
+
 	private final Scanner scanner;
-	
+
 	private final Logger LOGGER = LogManager.getLogger();
-	
+
 	public Input() {
 		scanner = new Scanner(System.in);
 	}
-	
+
 	public Input(Scanner scanner) {
 		super();
-		this.scanner = scanner;	
+		this.scanner = scanner;
 	}
-	
+
 	public Long getLong() {
 		String input = null;
 		Long longInput = null;
@@ -51,6 +58,5 @@ public class Input {
 		} while (doubleInput == null);
 		return doubleInput;
 	}
-	
 
 }

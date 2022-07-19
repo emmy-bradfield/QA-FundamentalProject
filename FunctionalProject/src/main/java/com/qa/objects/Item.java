@@ -2,6 +2,11 @@ package com.qa.objects;
 
 public class Item {
 	
+	/**
+	 * Class for constructing an Item object to match the SQL database. 
+	 * Includes Getters and Setters to retrieve the object information
+	 */
+	
 	private Long id;
 	private String name;
 	private Double cost;
