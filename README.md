@@ -9,29 +9,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+MySQL 8.0CE 
+Java Development Kit (JDK)
+Maven Apache
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Normal texr
 
 ```
-Give the example
+Text as commands
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -70,11 +60,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning.
+* We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Emily Bradfield** - *Initial Work* - [emmy-bradfield](https://github.com/emmy-bradfield)
 
 ## License
 
@@ -84,6 +74,9 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Special thanks to my QATrainers,
+* Pier Barbs
+* Joran Benbelaid
+* Ed Reynolds
+
+for their support and guidance in my development and understanding of Javascript and software development
