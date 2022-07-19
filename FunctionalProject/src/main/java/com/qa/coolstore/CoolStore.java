@@ -12,8 +12,8 @@ import com.qa.controls.Table;
 import com.qa.database.DBCustomer;
 import com.qa.database.DBItem;
 import com.qa.database.DBOrder;
-import com.qa.database.SQLConnector;
 import com.qa.tools.Input;
+import com.qa.tools.SQLConnector;
 
 public class CoolStore {
 
@@ -21,17 +21,22 @@ public class CoolStore {
 	private final Input userIn;
 	private final CRUDCustomer customers;
 	private final CRUDItems items;
-	//private final CRUDOrders orders;
+	// private final CRUDOrders orders;
 
 	public CoolStore() {
 		this.userIn = new Input();
 		final DBCustomer custDB = new DBCustomer();
 		final DBItem itemDB = new DBItem();
-		//final DBOrder orderDB = new DBOrder();
+		// final DBOrder orderDB = new DBOrder();
 		this.customers = new CRUDCustomer(custDB, userIn);
 		this.items = new CRUDItems(itemDB, userIn);
-		//this.orders = new CRUDOrders(orderDB, userIn);
+		// this.orders = new CRUDOrders(orderDB, userIn);
 	}
+
+	/**
+	 * Starts the software running, greets the user, and asks which Table they wish
+	 * to interact with
+	 */
 
 	public void startSystem() {
 		LOGGER.info("Welcome to CoolStore Inventory and Order Management System");
@@ -48,7 +53,14 @@ public class CoolStore {
 
 		} while (table != Table.STOP);
 	}
-	
+
+	/**
+	 * Informs the system which table to interact with, and asks the user to input
+	 * their chosen action to then execute to the table
+	 * 
+	 * @param table
+	 */
+
 	private void tableAction(Table table) {
 		boolean changeTable = false;
 		do {
@@ -62,15 +74,15 @@ public class CoolStore {
 				active = this.items;
 				break;
 			case ORDERS:
-				//active = this.orders;
+				// active = this.orders;
 				break;
 			case STOP:
 				return;
 			default:
 				break;
 			}
-			
-			LOGGER.info(() ->"What would you like to do with " + table.name().toLowerCase() + ":");
+
+			LOGGER.info(() -> "What would you like to do with " + table.name().toLowerCase() + ":");
 
 			Action.printActions();
 			Action action = Action.getAction(userIn);
@@ -82,20 +94,28 @@ public class CoolStore {
 			}
 		} while (!changeTable);
 	}
-	
-	public void doAction(CRUD<?> crudController, Action action) {
+
+	/**
+	 * Communicates with the CRUD class to execute the action as specified by the
+	 * user to the previously determined table
+	 * 
+	 * @param crudController
+	 * @param action
+	 */
+
+	public void doAction(CRUD<?> crud, Action action) {
 		switch (action) {
 		case ADD:
-			crudController.add();
+			crud.add();
 			break;
 		case VIEW:
-			crudController.view();
+			crud.view();
 			break;
 		case UPDATE:
-			crudController.update();
+			crud.update();
 			break;
 		case DELETE:
-			crudController.delete();
+			crud.delete();
 			break;
 		case RETURN:
 			break;

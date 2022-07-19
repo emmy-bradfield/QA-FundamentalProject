@@ -5,14 +5,16 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.database.DBCustomer;
 import com.qa.database.DBItem;
-import com.qa.objects.Customer;
 import com.qa.objects.Item;
 import com.qa.tools.Input;
 
-public class CRUDItems implements CRUD<Item>{
-	
+/**
+ * Takes in item details to then execute CRUD commands with
+ */
+
+public class CRUDItems implements CRUD<Item> {
+
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	private DBItem dbitem;
@@ -23,8 +25,13 @@ public class CRUDItems implements CRUD<Item>{
 		this.dbitem = itemDB;
 		this.input = userIn;
 	}
-	
-	public CRUDItems() {}
+
+	public CRUDItems() {
+	}
+
+	/**
+	 * Adds a new item to the database
+	 */
 
 	@Override
 	public Item add() {
@@ -37,6 +44,12 @@ public class CRUDItems implements CRUD<Item>{
 		return item;
 	}
 
+	/**
+	 * Allows a user to view all items in the database, printed through the logger
+	 * 
+	 * @return items
+	 */
+
 	@Override
 	public List<Item> view() {
 		List<Item> items = dbitem.viewAll();
@@ -46,12 +59,23 @@ public class CRUDItems implements CRUD<Item>{
 		return items;
 	}
 
+	/**
+	 * Allows for an item to be deleted from the database based on the ID given
+	 */
+
 	@Override
 	public int delete() {
 		LOGGER.info("Please enter the id of the product you would like to delete");
 		Long id = input.getLong();
 		return dbitem.delete(id);
 	}
+
+	/**
+	 * Allows for an item to be updated in the database based on ID provided, and
+	 * returns the new item details
+	 * 
+	 * @return item
+	 */
 
 	@Override
 	public Item update() {

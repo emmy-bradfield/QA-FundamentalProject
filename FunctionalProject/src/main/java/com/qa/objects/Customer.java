@@ -3,6 +3,11 @@ package com.qa.objects;
 
 public class Customer {
 	
+	/**
+	 * Class for constructing a Customer object to match the SQL database. 
+	 * Includes Getters and Setters to retrieve the object information
+	 */
+	
 	private Long id;
 	private String forename;
 	private String surname;

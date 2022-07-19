@@ -12,10 +12,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.objects.Item;
+import com.qa.tools.SQLConnector;
 
 public class DBItem implements DB<Item>{
 	
 	public static final Logger LOGGER = LogManager.getLogger();
+	
+	/**
+	 * Reads all items from the database
+	 * 
+	 * @return A list of items
+	 */
 
 	@Override
 	public List<Item> viewAll() {
@@ -33,6 +40,12 @@ public class DBItem implements DB<Item>{
 		}
 		return new ArrayList<>();
 	}
+	
+	/**
+	 * Reads the last item added to the database
+	 * 
+	 * @return an item
+	 */
 
 	@Override
 	public Item viewLatest() {
@@ -47,6 +60,13 @@ public class DBItem implements DB<Item>{
 		}
 		return null;
 	}
+	
+	/**
+	 * Reads a specific item based on the id provided by the user
+	 * 
+	 * @param ID - the item ID
+	 * @return an item
+	 */
 
 	@Override
 	public Item view(Long id) {
@@ -63,6 +83,12 @@ public class DBItem implements DB<Item>{
 		}
 		return null;
 	}
+	
+	/**
+	 * Creates an item in the database
+	 * 
+	 * @param item - takes in an item object. id will be ignored
+	 */
 
 	@Override
 	public Item add(Item item) {
@@ -79,6 +105,14 @@ public class DBItem implements DB<Item>{
 		}
 		return null;
 	}
+	
+	/**
+	 * Updates an item in the database
+	 * 
+	 * @param item - takes in an item object, the id field will be used to
+	 *                 update that item in the database
+	 */
+
 
 	@Override
 	public Item update(Item item) {
@@ -96,6 +130,12 @@ public class DBItem implements DB<Item>{
 		}
 		return null;
 	}
+	
+	/**
+	 * Deletes an item in the database
+	 * 
+	 * @param id - id of the item
+	 */
 
 	@Override
 	public int delete(long id) {
@@ -109,6 +149,14 @@ public class DBItem implements DB<Item>{
 		}
 		return 0;
 	}
+	
+	/**
+	 * Creates a new object Item from the ResultSet data in the SQL Database
+	 * 
+	 * @param ResultSet
+	 * @throws SQLException
+	 * @return Item
+	 */
 
 	@Override
 	public Item modelFromResultSet(ResultSet resultSet) throws SQLException {
