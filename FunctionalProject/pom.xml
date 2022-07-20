@@ -8,7 +8,13 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>4.13.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.7.7</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -31,10 +37,30 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.qa.main.Runner</mainClass>
+							<mainClass>com.qa.coolstore.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -48,7 +74,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>com.qa.main.Runner</mainClass>
+									<mainClass>com.qa.coolstore.Main</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

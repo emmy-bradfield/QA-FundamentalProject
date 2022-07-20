@@ -22,6 +22,8 @@ public class Invoice {
 		this.setOrderDate(OrderDate);
 		this.setOrderTotal(OrderTotal);
 	}
+	
+	public Invoice() {};
 
 	public Long getOrderID() {
 		return OrderID;

@@ -131,9 +131,9 @@ public class DBItem implements DB<Item>{
 						.prepareStatement("UPDATE Items SET itemName = ?, itemCost = ? WHERE itemID = ?");) {
 			statement.setString(1, item.getName());
 			statement.setDouble(2, item.getCost());
-			statement.setLong(3, item.getId());
+			statement.setLong(3, item.getID());
 			statement.executeUpdate();
-			return view(item.getId());
+			return view(item.getID());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -185,7 +185,7 @@ public class DBItem implements DB<Item>{
 
 	@Override
 	public void string(Item item) {
-		String str = "PRODUCT ID #pL-0090-" + item.getId() + " | References " + item.getName() + ", costed at " + item.getCost() + "GBP per unit";
+		String str = "PRODUCT ID #pL-0090-" + item.getID() + " | References " + item.getName() + ", costed at " + item.getCost() + "GBP per unit";
 		System.out.println(str);
 	}
 

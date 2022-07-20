@@ -30,7 +30,7 @@ public class Item {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public Long getID() {
 		return id;
 	}
 

@@ -1,16 +1,9 @@
 CREATE DATABASE IF NOT EXISTS storeDB;
 USE storeDB;
 
-DELETE FROM Orders;
-DELETE FROM Customers;
-DELETE FROM Items;
-
-DROP VIEW IF EXISTS Invoices;
-DROP VIEW IF EXISTS OrderView;
-DROP VIEW IF EXISTS Subtotal;
 DROP TABLE IF EXISTS Orders;
-DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Items;
+DROP TABLE IF EXISTS Customers;
 
 CREATE TABLE IF NOT EXISTS Customers (
 customerID INT NOT NULL AUTO_INCREMENT,
@@ -66,3 +59,4 @@ JOIN Customers c
 	ON s.fk_customerID=c.customerID
 GROUP BY s.purchaseID
 ; 
+SELECT * FROM Customers;
