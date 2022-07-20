@@ -4,6 +4,11 @@ import java.sql.Date;
 
 public class Invoice {
 	
+	/**
+	 * Class for constructing an Invoice object to match the SQL database. 
+	 * Includes Getters and Setters to retrieve the object information
+	 */
+	
 	private Long OrderID;
 	private String Forename;
 	private String Surname;

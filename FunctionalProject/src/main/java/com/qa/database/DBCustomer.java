@@ -21,7 +21,8 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Reads all customers from the database
 	 * 
-	 * @return A list of customers
+	 * @throws SQLException
+	 * @return customers - a list of customers
 	 */
 
 	@Override
@@ -46,7 +47,8 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Reads the last customer added to the database
 	 * 
-	 * @return a customer
+	 * @throws Exception
+	 * @return customer - a customer
 	 */
 
 	public Customer viewLatest() {
@@ -66,6 +68,7 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Reads a specific customer based on the id provided by the user
 	 * 
+	 * @throws Exception
 	 * @param ID - the customer ID
 	 * @return a customer
 	 */
@@ -92,6 +95,7 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Creates a customer in the database
 	 * 
+	 * @throws Exception
 	 * @param customer - takes in a customer object. id will be ignored
 	 */
 
@@ -114,8 +118,10 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Updates a customer in the database
 	 * 
+	 * @throws Exception
 	 * @param customer - takes in a customer object, the id field will be used to
 	 *                 update that customer in the database
+	 * @return view(customer) - the details of that customer
 	 */
 
 	@Override
@@ -138,6 +144,7 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Deletes a customer in the database
 	 * 
+	 * @throws Exception
 	 * @param id - id of the customer
 	 */
 
@@ -158,9 +165,9 @@ public class DBCustomer implements DB<Customer> {
 	/**
 	 * Creates a new object Customer from the ResultSet data in the SQL Database
 	 * 
-	 * @param ResultSet
+	 * @param ResultSet - the result set from the SQL Query
 	 * @throws SQLException
-	 * @return Customer
+	 * @return Customer - a new customer
 	 */
 
 	@Override
@@ -170,6 +177,12 @@ public class DBCustomer implements DB<Customer> {
 		String surname = resultSet.getString("customerSurname");
 		return new Customer(id, firstName, surname);
 	}
+	
+	/**
+	 * Creates a string of the information stored in object customer to print
+	 * 
+	 * @param customer - a customer object
+	 */
 
 	@Override
 	public void string(Customer customer) {

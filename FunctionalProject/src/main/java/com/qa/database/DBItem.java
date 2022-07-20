@@ -21,7 +21,8 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Reads all items from the database
 	 * 
-	 * @return A list of items
+	 * @throws SQLException
+	 * @return items - a list of items
 	 */
 
 	@Override
@@ -46,7 +47,8 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Reads the last item added to the database
 	 * 
-	 * @return an item
+	 * @throws Exception
+	 * @return item - an item
 	 */
 
 	@Override
@@ -66,8 +68,9 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Reads a specific item based on the id provided by the user
 	 * 
+	 * @throws Exception
 	 * @param ID - the item ID
-	 * @return an item
+	 * @return item - an item
 	 */
 
 	@Override
@@ -91,6 +94,7 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Creates an item in the database
 	 * 
+	 * @throws Exception
 	 * @param item - takes in an item object. id will be ignored
 	 */
 
@@ -113,8 +117,10 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Updates an item in the database
 	 * 
+	 * @throws Exception
 	 * @param item - takes in an item object, the id field will be used to
 	 *                 update that item in the database
+	 * @return view(item) - the details of the item updated
 	 */
 
 
@@ -138,6 +144,7 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Deletes an item in the database
 	 * 
+	 * @throws Exception
 	 * @param id - id of the item
 	 */
 
@@ -157,9 +164,9 @@ public class DBItem implements DB<Item>{
 	/**
 	 * Creates a new object Item from the ResultSet data in the SQL Database
 	 * 
-	 * @param ResultSet
+	 * @param ResultSet - the result set from the SQL statement
 	 * @throws SQLException
-	 * @return Item
+	 * @return item - a new item
 	 */
 
 	@Override
@@ -169,6 +176,12 @@ public class DBItem implements DB<Item>{
 		Double cost = resultSet.getDouble("itemCost");
 		return new Item(id, name, cost);
 	}
+	
+	/**
+	 * Creates a string of the information stored in object item to print
+	 * 
+	 * @param item - an item object
+	 */
 
 	@Override
 	public void string(Item item) {

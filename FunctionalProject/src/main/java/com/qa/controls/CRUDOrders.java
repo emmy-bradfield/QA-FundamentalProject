@@ -31,6 +31,8 @@ public class CRUDOrders implements CRUD<Order>{
 	
 	/**
 	 * Adds a new order to the database
+	 * 
+	 * @return order - an order
 	 */
 
 	@Override
@@ -53,7 +55,7 @@ public class CRUDOrders implements CRUD<Order>{
 	/**
 	 * Allows a user to view all orders in the database, printed through the logger
 	 * 
-	 * @return orders
+	 * @return orders - a list of orders
 	 */
 
 	@Override
@@ -64,6 +66,8 @@ public class CRUDOrders implements CRUD<Order>{
 	
 	/**
 	 * Allows for an order to be deleted from the database based on the ID given
+	 * 
+	 * @return dborder.delete(id) - an executed SQL statement
 	 */
 
 	@Override
@@ -77,7 +81,7 @@ public class CRUDOrders implements CRUD<Order>{
 	 * Allows for an order to be updated in the database based on ID provided, and
 	 * returns the new order details
 	 * 
-	 * @return order
+	 * @return order - an order
 	 */
 
 	@Override

@@ -18,6 +18,10 @@ import com.qa.tools.Input;
 import com.qa.tools.SQLConnector;
 
 public class CoolStore {
+	
+	/**
+	 * Attributes and constructors
+	 */
 
 	public static final Logger LOGGER = LogManager.getLogger();
 	private final Input userIn;
@@ -63,7 +67,7 @@ public class CoolStore {
 	 * Informs the system which table to interact with, and asks the user to input
 	 * their chosen action to then execute to the table
 	 * 
-	 * @param table
+	 * @param table - the table they chose from startSystem()
 	 */
 
 	private void tableAction(Table table) {
@@ -107,8 +111,8 @@ public class CoolStore {
 	 * Communicates with the CRUD class to execute the action as specified by the
 	 * user to the previously determined table
 	 * 
-	 * @param crudController
-	 * @param action
+	 * @param CRUD - the table to which they will execute an action
+	 * @param action - the action they wish to execute
 	 */
 
 	public void doAction(CRUD<?> crud, Action action) {
