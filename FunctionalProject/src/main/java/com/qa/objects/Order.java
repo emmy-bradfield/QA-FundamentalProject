@@ -44,6 +44,10 @@ public class Order {
 		this.setAmount(amount);
 	}
 
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
+
 	private void setCost(Double cost) {
 		this.cost = cost;
 		
