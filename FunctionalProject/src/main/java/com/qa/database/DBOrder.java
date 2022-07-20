@@ -54,9 +54,11 @@ public class DBOrder implements DB<Order> {
 	public Order viewLatest() {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM OrderView ORDER BY orderID DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM OrderView ORDER BY orderID_itemized DESC LIMIT 1");) {
 			resultSet.next();
-			return modelFromResultSet(resultSet);
+			Order order = modelFromResultSet(resultSet);
+			string(order);
+			return order;
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -150,7 +152,8 @@ public class DBOrder implements DB<Order> {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
 				PreparedStatement statement = connection.prepareStatement("DELETE FROM Orders WHERE orderID = ?");) {
 			statement.setLong(1, id);
-			return statement.executeUpdate();
+			statement.executeUpdate();
+			return 0;
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());

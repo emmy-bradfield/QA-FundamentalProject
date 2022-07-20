@@ -36,7 +36,7 @@ public class CoolStore {
 		this.customers = new CRUDCustomer(custDB, userIn);
 		this.items = new CRUDItems(itemDB, userIn);
 		this.orders = new CRUDOrders(orderDB, userIn);
-		this.invoices = new CRUDInvoice(invoiceDB, userIn);
+		this.invoices = new CRUDInvoice(invoiceDB, userIn, orderDB);
 	}
 
 	/**

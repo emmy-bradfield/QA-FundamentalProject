@@ -60,10 +60,11 @@ FROM Subtotal s
 JOIN Customers c 
 	ON s.fk_customerID=c.customerID
 GROUP BY s.purchaseID
-;
+; 
 
 SELECT * FROM Orders;
 SELECT * FROM Subtotal;
 SELECT * FROM Invoices;
+SELECT * FROM OrderView;
 SELECT * FROM Customers;
 SELECT * FROM Items;

@@ -22,6 +22,14 @@ public class Item {
 		this.setCost(cost);
 	}
 
+	public Item(Invoice modelFromResultSet) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
