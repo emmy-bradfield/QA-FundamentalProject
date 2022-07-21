@@ -22,7 +22,8 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Reads all orders from the database
 	 * 
-	 * @return A list of orders
+	 * @throws SQLException
+	 * @return orders - a list of orders
 	 */
 
 	@Override
@@ -47,7 +48,8 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Reads the last order added to the database
 	 * 
-	 * @return an order
+	 * @throws Exception
+	 * @return order - an order
 	 */
 
 	@Override
@@ -69,8 +71,9 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Reads a specific order based on the id provided by the user
 	 * 
+	 * @throws Exception
 	 * @param ID - the order ID
-	 * @return an order
+	 * @return order - an order
 	 */
 
 	@Override
@@ -94,6 +97,7 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Creates an order in the database
 	 * 
+	 * @throws Exception
 	 * @param order - takes in an order object, id will be ignored
 	 */
 
@@ -119,8 +123,10 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Updates an order in the database
 	 * 
+	 * @throws Exception
 	 * @param order - takes in an order object, the id field will be used to update
 	 *              that order in the database
+	 * @return view(order) - the details of that order
 	 */
 
 	@Override
@@ -144,6 +150,7 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Deletes an item in the database
 	 * 
+	 * @throws Exception
 	 * @param id - id of the order
 	 */
 	
@@ -164,9 +171,9 @@ public class DBOrder implements DB<Order> {
 	/**
 	 * Creates a new object Order from the ResultSet data in the SQL Database
 	 * 
-	 * @param ResultsSet
+	 * @param ResultsSet - the result set from the SQL statement
 	 * @throws SQLException
-	 * @return Order
+	 * @return order - a new order
 	 */
 
 	@Override
@@ -180,6 +187,12 @@ public class DBOrder implements DB<Order> {
 		Order order = new Order(id, pid, date, item, cost, amount);
 		return order;
 	}
+	
+	/**
+	 * Creates a string of the information stored in object order to print
+	 * 
+	 * @param order - an order object
+	 */
 
 	@Override
 	public void string(Order order) {

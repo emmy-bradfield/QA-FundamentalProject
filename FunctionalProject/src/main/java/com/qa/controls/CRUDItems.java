@@ -31,6 +31,8 @@ public class CRUDItems implements CRUD<Item> {
 
 	/**
 	 * Adds a new item to the database
+	 * 
+	 * @return item - an item
 	 */
 
 	@Override
@@ -47,7 +49,7 @@ public class CRUDItems implements CRUD<Item> {
 	/**
 	 * Allows a user to view all items in the database, printed through the logger
 	 * 
-	 * @return items
+	 * @return items - a list of items
 	 */
 
 	@Override
@@ -58,6 +60,8 @@ public class CRUDItems implements CRUD<Item> {
 
 	/**
 	 * Allows for an item to be deleted from the database based on the ID given
+	 * 
+	 * @ return dbitem.delete(id) - an executed SQL statement
 	 */
 
 	@Override
@@ -71,7 +75,7 @@ public class CRUDItems implements CRUD<Item> {
 	 * Allows for an item to be updated in the database based on ID provided, and
 	 * returns the new item details
 	 * 
-	 * @return item
+	 * @return item - an item
 	 */
 
 	@Override
