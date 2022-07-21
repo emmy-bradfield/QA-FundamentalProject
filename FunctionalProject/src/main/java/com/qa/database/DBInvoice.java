@@ -13,14 +13,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.objects.Invoice;
-import com.qa.objects.Item;
 import com.qa.tools.SQLConnector;
 
 public class DBInvoice implements DB<Invoice> {
-	
+
 	public DBItem itemdb;
 
 	public static final Logger LOGGER = LogManager.getLogger();
+
+	/**
+	 * Reads all invoices from the database
+	 * 
+	 * @throws SQLException
+	 * @return invoices - a list of invoices
+	 */
 
 	@Override
 	public List<Invoice> viewAll() {
@@ -41,6 +47,13 @@ public class DBInvoice implements DB<Invoice> {
 		return new ArrayList<>();
 	}
 
+	/**
+	 * Reads the last invoice added to the database
+	 * 
+	 * @throws Exception
+	 * @return invoice - an invoice
+	 */
+
 	@Override
 	public Invoice viewLatest() {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();
@@ -54,6 +67,14 @@ public class DBInvoice implements DB<Invoice> {
 		}
 		return null;
 	}
+
+	/**
+	 * Reads a specific invoice based on the id provided by the user
+	 * 
+	 * @throws Exception
+	 * @param ID - the invoice ID
+	 * @return invoice - an invoice
+	 */
 
 	@Override
 	public Invoice view(Long id) {
@@ -74,11 +95,21 @@ public class DBInvoice implements DB<Invoice> {
 		return null;
 	}
 
+	/**
+	 * Adds an invoice to the database - function is empty
+	 */
+
 	@Override
 	public Invoice add(Invoice invoice) {
 
 		return null;
 	}
+
+	/**
+	 * Calculates and prints the cost of an invoice
+	 * 
+	 * @param invoice - an invoice
+	 */
 
 	@Override
 	public Invoice update(Invoice invoice) {
@@ -88,6 +119,13 @@ public class DBInvoice implements DB<Invoice> {
 
 		return null;
 	}
+
+	/**
+	 * Deletes an item/transaction from the invoice
+	 * 
+	 * @throws Exception
+	 * @param id - id of the transaction
+	 */
 
 	@Override
 	public int delete(long id) {
@@ -104,6 +142,14 @@ public class DBInvoice implements DB<Invoice> {
 		return 0;
 	}
 
+	/**
+	 * Creates a new object Invoice from the ResultSet data in the SQL Database
+	 * 
+	 * @param ResultSet - the result set from the SQL Query
+	 * @throws SQLException
+	 * @return Invoice - an invoice object
+	 */
+
 	@Override
 	public Invoice modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("OrderID");
@@ -114,6 +160,12 @@ public class DBInvoice implements DB<Invoice> {
 		return new Invoice(id, firstName, surname, date, total);
 	}
 
+	/**
+	 * Creates a string of the information stored in object invoice to print
+	 * 
+	 * @param invoice - an invoice object
+	 */
+
 	@Override
 	public void string(Invoice invoice) {
 		String str = "Invoice ID #0072-" + invoice.getOrderID() + " | References a purchase by " + invoice.getForename()
@@ -121,6 +173,15 @@ public class DBInvoice implements DB<Invoice> {
 				+ " GBP";
 		System.out.println(str);
 	}
+
+	/**
+	 * Calculates the cost of an invoice (collection of transactions made by the
+	 * same customer on the same day with the same purchase ID) and prints it
+	 * 
+	 * @throws Exception
+	 * @param id - the id of the invoice
+	 * @return cost - a double containing the cost of the invoice
+	 */
 
 	public Double findCost(Long id) {
 		try (Connection connection = SQLConnector.getCurrent().getConnection();

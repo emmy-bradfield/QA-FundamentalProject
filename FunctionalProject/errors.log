@@ -1,59 +1,16 @@
-20220720 10:17:44 INFO  [main] coolstore.CoolStore CoolStore.java48 - Welcome to CoolStore Inventory and Order Management System
-20220720 10:17:44 INFO  [main] coolstore.CoolStore CoolStore.java53 - Which entity would you like to use?
-20220720 10:17:44 INFO  [main] controls.Table Table.java42 - CUSTOMERS - Add, remove, update, and view all customers in the database
-20220720 10:17:44 INFO  [main] controls.Table Table.java42 - ITEMS - Add, remove, update, and view all items sold
-20220720 10:17:44 INFO  [main] controls.Table Table.java42 - ORDERS - Add, remove, update, cost, and delete all placed orders
-20220720 10:17:44 INFO  [main] controls.Table Table.java42 - STOP - To exit the system
-20220720 10:17:44 INFO  [main] controls.Table Table.java42 - INVOICES - View all current invoices for placed orders
-20220720 10:17:46 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with orders:
-20220720 10:17:46 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:17:46 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:17:46 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:17:46 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:17:46 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
-20220720 10:17:47 INFO  [main] controls.CRUDOrders CRUDOrders.java71 - Please enter the id of the order you would like to delete
-20220720 10:17:49 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with orders:
-20220720 10:17:49 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:17:49 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:17:49 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:17:49 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:17:49 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
-20220720 10:17:52 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with orders:
-20220720 10:17:52 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:17:52 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:17:52 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:17:52 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:17:52 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
-20220720 10:17:56 INFO  [main] controls.CRUDOrders CRUDOrders.java38 - Please enter the purchase ID
-20220720 10:17:58 INFO  [main] controls.CRUDOrders CRUDOrders.java40 - Please enter the order date
-20220720 10:18:03 INFO  [main] controls.CRUDOrders CRUDOrders.java42 - Please enter the ID for the customer who placed the order
-20220720 10:18:04 INFO  [main] controls.CRUDOrders CRUDOrders.java44 - Please enter the ID for the item purchased
-20220720 10:18:07 INFO  [main] controls.CRUDOrders CRUDOrders.java46 - Please enter the quantity of the item purchased
-20220720 10:18:09 INFO  [main] controls.CRUDOrders CRUDOrders.java49 - Order created
-20220720 10:18:09 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with orders:
-20220720 10:18:09 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:18:09 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:18:09 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:18:09 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:18:09 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
-20220720 10:18:15 INFO  [main] coolstore.CoolStore CoolStore.java53 - Which entity would you like to use?
-20220720 10:18:15 INFO  [main] controls.Table Table.java42 - CUSTOMERS - Add, remove, update, and view all customers in the database
-20220720 10:18:15 INFO  [main] controls.Table Table.java42 - ITEMS - Add, remove, update, and view all items sold
-20220720 10:18:15 INFO  [main] controls.Table Table.java42 - ORDERS - Add, remove, update, cost, and delete all placed orders
-20220720 10:18:15 INFO  [main] controls.Table Table.java42 - STOP - To exit the system
-20220720 10:18:15 INFO  [main] controls.Table Table.java42 - INVOICES - View all current invoices for placed orders
-20220720 10:18:17 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with customers:
-20220720 10:18:17 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:18:17 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:18:17 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:18:17 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:18:17 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
-20220720 10:18:17 INFO  [main] controls.CRUDCustomer CRUDCustomer.java38 - Please enter a first name
-20220720 10:18:19 INFO  [main] controls.CRUDCustomer CRUDCustomer.java40 - Please enter a surname
-20220720 10:18:21 INFO  [main] controls.CRUDCustomer CRUDCustomer.java43 - Customer created
-20220720 10:18:21 INFO  [main] coolstore.CoolStore CoolStore.java93 - What would you like to do with customers:
-20220720 10:18:21 INFO  [main] controls.Action Action.java40 - ADD - Create a new entry (invalid for INVOICE)
-20220720 10:18:21 INFO  [main] controls.Action Action.java40 - UPDATE - Change an existing entry (invalid for INVOICE)
-20220720 10:18:21 INFO  [main] controls.Action Action.java40 - DELETE - Remove an entry (invalid for INVOICE)
-20220720 10:18:21 INFO  [main] controls.Action Action.java40 - VIEW - View all entries
-20220720 10:18:21 INFO  [main] controls.Action Action.java40 - RETURN - Exit the system
+20220721 18:30:58 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.orderID AS orderID_itemized, o.purchaseID AS invoiceID, o.orderDate AS orderDa' at line 1
+20220721 18:30:58 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.purchaseID, o.orderDate AS orderDate, o.fk_customerID, (i.itemCost*o.itemQuant' at line 1
+20220721 18:30:58 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's.purchaseID AS 'OrderID',		c.customerForename AS 'Forename',         c.customer' at line 1
+20220721 18:30:58 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLException: Statement.executeUpdate() or Statement.executeLargeUpdate() cannot issue statements that produce result sets.
+20220721 18:31:02 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.orderID AS orderID_itemized, o.purchaseID AS invoiceID, o.orderDate AS orderDa' at line 1
+20220721 18:31:02 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.purchaseID, o.orderDate AS orderDate, o.fk_customerID, (i.itemCost*o.itemQuant' at line 1
+20220721 18:31:02 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's.purchaseID AS 'OrderID',		c.customerForename AS 'Forename',         c.customer' at line 1
+20220721 18:31:02 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLException: Statement.executeUpdate() or Statement.executeLargeUpdate() cannot issue statements that produce result sets.
+20220721 18:31:05 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.orderID AS orderID_itemized, o.purchaseID AS invoiceID, o.orderDate AS orderDa' at line 1
+20220721 18:31:05 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.purchaseID, o.orderDate AS orderDate, o.fk_customerID, (i.itemCost*o.itemQuant' at line 1
+20220721 18:31:05 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's.purchaseID AS 'OrderID',		c.customerForename AS 'Forename',         c.customer' at line 1
+20220721 18:31:05 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLException: Statement.executeUpdate() or Statement.executeLargeUpdate() cannot issue statements that produce result sets.
+20220721 18:31:06 DEBUG [main] database.DBOrder DBOrder.java91 - java.sql.SQLSyntaxErrorException: Table 'storedb.orderview' doesn't exist
+20220721 18:31:06 ERROR [main] database.DBOrder DBOrder.java92 - Table 'storedb.orderview' doesn't exist
+20220721 18:31:08 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.orderID AS orderID_itemized, o.purchaseID AS invoiceID, o.orderDate AS orderDa' at line 1
+20220721 18:31:08 DEBUG [main] tools.SQLConnector SQLConnector.java70 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o.purchaseID, o.orderDate AS orderDate, o.fk_customerID, (i.itemCost*o.itemQuant' at line 1
