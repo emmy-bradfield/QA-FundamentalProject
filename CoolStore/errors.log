@@ -1,0 +1,21 @@
+20220721 22:24:40 INFO  [main] coolstore.CoolStore CoolStore.java39 - Welcome to the Inventory Management System!
+20220721 22:24:40 INFO  [main] coolstore.CoolStore CoolStore.java44 - Which entity would you like to use?
+20220721 22:24:40 INFO  [main] domain.Domain Domain.java28 - CUSTOMER: Information about customers
+20220721 22:24:40 INFO  [main] domain.Domain Domain.java28 - ITEM: Individual Items
+20220721 22:24:40 INFO  [main] domain.Domain Domain.java28 - ORDER: Purchases of items
+20220721 22:24:40 INFO  [main] domain.Domain Domain.java28 - CALCULATOR: Calculate the total of an existing order
+20220721 22:24:40 INFO  [main] domain.Domain Domain.java28 - STOP: To close the application
+20220721 22:24:42 ERROR [main] domain.Domain Domain.java39 - java.lang.IllegalArgumentException: No enum constant com.qa.coolstore.persistence.domain.Domain.ORDERS
+20220721 22:24:47 INFO  [main] coolstore.CoolStore CoolStore.java80 - What would you like to do with order:
+20220721 22:24:47 INFO  [main] controller.Action Action.java38 - CREATE: To save a new entity into the database
+20220721 22:24:47 INFO  [main] controller.Action Action.java38 - READ: To read an entity from the database
+20220721 22:24:47 INFO  [main] controller.Action Action.java38 - UPDATE: To change an entity already in the database
+20220721 22:24:47 INFO  [main] controller.Action Action.java38 - DELETE: To remove an entity from the database
+20220721 22:24:47 INFO  [main] controller.Action Action.java38 - RETURN: To return to domain selection
+20220721 22:24:50 INFO  [main] controller.OrderController OrderController.java29 - id: 1 customer: 1 item: 1 quantity: 2 transaction: 1
+20220721 22:24:50 INFO  [main] coolstore.CoolStore CoolStore.java80 - What would you like to do with order:
+20220721 22:24:50 INFO  [main] controller.Action Action.java38 - CREATE: To save a new entity into the database
+20220721 22:24:50 INFO  [main] controller.Action Action.java38 - READ: To read an entity from the database
+20220721 22:24:50 INFO  [main] controller.Action Action.java38 - UPDATE: To change an entity already in the database
+20220721 22:24:50 INFO  [main] controller.Action Action.java38 - DELETE: To remove an entity from the database
+20220721 22:24:50 INFO  [main] controller.Action Action.java38 - RETURN: To return to domain selection

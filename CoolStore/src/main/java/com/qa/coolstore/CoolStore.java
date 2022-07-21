@@ -6,23 +6,33 @@ import org.apache.logging.log4j.Logger;
 import com.qa.coolstore.controller.Action;
 import com.qa.coolstore.controller.CrudController;
 import com.qa.coolstore.controller.CustomerController;
+import com.qa.coolstore.controller.ItemController;
+import com.qa.coolstore.controller.OrderController;
 import com.qa.coolstore.persistence.dao.CustomerDAO;
+import com.qa.coolstore.persistence.dao.ItemDAO;
+import com.qa.coolstore.persistence.dao.OrderDAO;
+import com.qa.coolstore.persistence.domain.Calculator;
 import com.qa.coolstore.persistence.domain.Domain;
 import com.qa.coolstore.utils.DBUtils;
 import com.qa.coolstore.utils.Utils;
-
 
 public class CoolStore {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	private final CustomerController customers;
+	private final ItemController items;
+	private final OrderController orders;
 	private final Utils utils;
 
 	public CoolStore() {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
+		final ItemDAO itemDAO = new ItemDAO();
+		final OrderDAO orderDAO = new OrderDAO();
 		this.customers = new CustomerController(custDAO, utils);
+		this.items = new ItemController(itemDAO, utils);
+		this.orders = new OrderController(orderDAO, utils);
 	}
 
 	public void imsSystem() {
@@ -36,7 +46,12 @@ public class CoolStore {
 
 			domain = Domain.getDomain(utils);
 
-			domainAction(domain);
+			if (domain == Domain.CALCULATOR) {
+				Calculator calculator = new Calculator(utils);
+			} else {
+
+				domainAction(domain);
+			}
 
 		} while (domain != Domain.STOP);
 	}
@@ -51,8 +66,10 @@ public class CoolStore {
 				active = this.customers;
 				break;
 			case ITEM:
+				active = this.items;
 				break;
 			case ORDER:
+				active = this.orders;
 				break;
 			case STOP:
 				return;
@@ -60,7 +77,7 @@ public class CoolStore {
 				break;
 			}
 
-			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + ":");
+			LOGGER.info("What would you like to do with " + domain.name().toLowerCase() + ":");
 
 			Action.printActions();
 			Action action = Action.getAction(utils);
