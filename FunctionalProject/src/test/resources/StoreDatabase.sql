@@ -1,6 +1,9 @@
 CREATE DATABASE IF NOT EXISTS storeDB;
 USE storeDB;
 
+DROP VIEW IF EXISTS Invoices;
+DROP VIEW IF EXISTS Subtotal;
+DROP VIEW IF EXISTS OrderView;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Items;
 DROP TABLE IF EXISTS Customers;
@@ -38,7 +41,6 @@ FROM Orders o
 JOIN Items i ON i.itemID=o.fk_itemID
 ;
 
-SELECT * FROM OrderView;
 
 CREATE VIEW Subtotal
 AS
@@ -59,4 +61,3 @@ JOIN Customers c
 	ON s.fk_customerID=c.customerID
 GROUP BY s.purchaseID
 ; 
-SELECT * FROM Customers;

@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +9,10 @@ import org.junit.Test;
 
 import com.qa.database.DBCustomer;
 import com.qa.database.DBItem;
+import com.qa.database.DBOrder;
 import com.qa.objects.Customer;
 import com.qa.objects.Item;
+import com.qa.objects.Order;
 import com.qa.tools.SQLConnector;
 
 public class DBtests {
@@ -92,6 +95,45 @@ public class DBtests {
 	@Test
 	public void itemDelete() {
 		assertEquals(1, item.delete(1));
+	}
+	
+	private final DBOrder order = new DBOrder();
+	Long millis = System.currentTimeMillis();
+	final Date date = new Date(millis);
+	
+	@Test
+	public void addOrder() {
+		final Order created = new Order(1L, date, 1L, 1L, 1L);
+		assertEquals(created, order.add(created));
+	}
+
+	@Test
+	public void viewAllOrder() {
+		List<Order> expected = new ArrayList<>();
+		expected.add(new Order(1L, date, 1L, 1L, 1L));
+		assertEquals(expected, order.viewAll());
+	}
+
+	@Test
+	public void viewLateOrder() {
+		assertEquals(new Order(1L, date, 1L, 1L, 1L), order.viewLatest());
+	}
+	
+	@Test
+	public void viewOrder() {
+		final long ID = 1L;
+		assertEquals(new Order(ID, date, 1L, 1L, 1L), order.view(ID));
+	}
+	
+	@Test
+	public void orderUp() {
+		final Order updated = new Order(1L, date, 1L, 1L, 1L);
+		assertEquals(updated, order.update(updated));
+	}
+	
+	@Test
+	public void orderDelete() {
+		assertEquals(1, order.delete(1));
 	}
 
 
