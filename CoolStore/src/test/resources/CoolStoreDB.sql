@@ -32,3 +32,11 @@ CREATE TABLE IF NOT EXISTS `orders`(
     FOREIGN KEY (`customerID`) REFERENCES `customers`(`id`),
     FOREIGN KEY (`itemID`) REFERENCES `items`(`id`)
 );
+
+DROP VIEW Calculator;
+CREATE VIEW Calculator
+AS
+SELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`
+FROM orders o
+JOIN items i ON o.itemID=i.id
+GROUP BY o.ref;

@@ -47,7 +47,7 @@ public class CoolStore {
 			domain = Domain.getDomain(utils);
 
 			if (domain == Domain.CALCULATOR) {
-				Calculator calculator = new Calculator(utils);
+				new Calculator(utils);
 			} else {
 
 				domainAction(domain);
