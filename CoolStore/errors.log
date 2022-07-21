@@ -1,0 +1,14 @@
+20220721 22:52:12 INFO  [main] coolstore.CoolStore CoolStore.java39 - Welcome to the Inventory Management System!
+20220721 22:52:12 INFO  [main] coolstore.CoolStore CoolStore.java44 - Which entity would you like to use?
+20220721 22:52:12 INFO  [main] domain.Domain Domain.java28 - CUSTOMER: Information about customers
+20220721 22:52:12 INFO  [main] domain.Domain Domain.java28 - ITEM: Individual Items
+20220721 22:52:12 INFO  [main] domain.Domain Domain.java28 - ORDER: Purchases of items
+20220721 22:52:12 INFO  [main] domain.Domain Domain.java28 - CALCULATOR: Calculate the total of an existing order
+20220721 22:52:12 INFO  [main] domain.Domain Domain.java28 - STOP: To close the application
+20220721 22:52:14 INFO  [main] domain.Calculator Calculator.java26 - Please enter the reference number for the order you wish to cost
+20220721 22:52:17 INFO  [main] coolstore.CoolStore CoolStore.java44 - Which entity would you like to use?
+20220721 22:52:17 INFO  [main] domain.Domain Domain.java28 - CUSTOMER: Information about customers
+20220721 22:52:17 INFO  [main] domain.Domain Domain.java28 - ITEM: Individual Items
+20220721 22:52:17 INFO  [main] domain.Domain Domain.java28 - ORDER: Purchases of items
+20220721 22:52:17 INFO  [main] domain.Domain Domain.java28 - CALCULATOR: Calculate the total of an existing order
+20220721 22:52:17 INFO  [main] domain.Domain Domain.java28 - STOP: To close the application
