@@ -13,6 +13,10 @@ import com.qa.objects.Order;
 import com.qa.tools.Input;
 
 public class CRUDInvoice implements CRUD<Invoice>{
+	
+	/**
+	 * Takes in invoice details to then execute CRUD commands with
+	 */
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
@@ -29,6 +33,10 @@ public class CRUDInvoice implements CRUD<Invoice>{
 
 	public CRUDInvoice() {
 	};
+	
+	/**
+	 * Adds a new item to the invoice
+	 */
 
 	public Invoice add() {
 		LOGGER.info("Please enter the puchase ID of the complete transaction you wish to add to");
@@ -45,11 +53,24 @@ public class CRUDInvoice implements CRUD<Invoice>{
 		LOGGER.info("Item added");
 		return null;
 	}
+	
+	/**
+	 * Allows a user to view all invoices in the database, printed through the
+	 * logger
+	 * 
+	 * @return invoices - a list of invoices
+	 */
 
 	public List<Invoice> view() {
 		List<Invoice> invoices = dbin.viewAll();
 		return invoices;
 	}
+	
+	/**
+	 * Allows for an item to be deleted from the invoice based on the ID given
+	 * 
+	 * @return dbin.delete(id) - an executed SQL statement
+	 */
 
 	@Override
 	public int delete() {
@@ -57,6 +78,10 @@ public class CRUDInvoice implements CRUD<Invoice>{
 		Long id = userIn.getLong();
 		return dbin.delete(id);
 	}
+	
+	/**
+	 * Prints the total cost of an invoice given it's ID
+	 */
 
 	@Override
 	public Invoice update() {
@@ -65,6 +90,10 @@ public class CRUDInvoice implements CRUD<Invoice>{
 		dbin.findCost(id);
 		return null;
 	}
+	
+	/**
+	 * Getters and Setters
+	 */
 
 	public Input getUserIn() {
 		return userIn;

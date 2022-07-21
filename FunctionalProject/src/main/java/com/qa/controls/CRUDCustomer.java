@@ -31,6 +31,8 @@ public class CRUDCustomer implements CRUD<Customer> {
 
 	/**
 	 * Adds a new customer to the database
+	 * 
+	 * @return customer - a customer
 	 */
 
 	@Override
@@ -48,7 +50,7 @@ public class CRUDCustomer implements CRUD<Customer> {
 	 * Allows a user to view all customers in the database, printed through the
 	 * logger
 	 * 
-	 * @return customers
+	 * @return customers - a list of customers
 	 */
 
 	@Override
@@ -59,6 +61,8 @@ public class CRUDCustomer implements CRUD<Customer> {
 
 	/**
 	 * Allows for a customer to be deleted from the database based on the ID given
+	 * 
+	 * @return dbcustomer.delete(id) - an executed SQL statement
 	 */
 
 	@Override
@@ -72,7 +76,7 @@ public class CRUDCustomer implements CRUD<Customer> {
 	 * Allows for a customer to be updated in the database based on ID provided, and
 	 * returns the new customer details
 	 * 
-	 * @return customer
+	 * @return customer - a new customer with the requetsed changes
 	 */
 
 	@Override
