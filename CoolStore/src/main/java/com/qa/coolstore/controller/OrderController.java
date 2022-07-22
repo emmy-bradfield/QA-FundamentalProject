@@ -48,6 +48,8 @@ public class OrderController implements CrudController<Order> {
 
 	@Override
 	public Order update() {
+		LOGGER.info("Please the ID of the order you wish to update");
+		Long id = utils.getLong();
 		LOGGER.info("Please the ID of the customer who placed the order");
 		Long customerID = utils.getLong();
 		LOGGER.info("Please enter the ID for the first product");
@@ -56,7 +58,7 @@ public class OrderController implements CrudController<Order> {
 		Long itemAmount = utils.getLong();
 		LOGGER.info("Please enter the reference for the transaction this purchase relates to");
 		Long ref = utils.getLong();
-		Order order = orderDAO.create(new Order(customerID, itemID, itemAmount, ref));
+		Order order = orderDAO.update(new Order(id, customerID, itemID, itemAmount, ref));
 		LOGGER.info("Order updated");
 		return order;
 	}

@@ -1,4 +1,4 @@
-package persistence.dao;
+package com.qa.coolstore.persistence.dao;
 
 import static org.junit.Assert.assertEquals;
 

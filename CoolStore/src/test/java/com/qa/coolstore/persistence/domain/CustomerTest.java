@@ -1,10 +1,9 @@
-package com.qa.persistence.domain;
+package com.qa.coolstore.persistence.domain;
 
 import org.junit.Test;
 
-import com.qa.coolstore.persistence.domain.Customer;
-
 import nl.jqno.equalsverifier.EqualsVerifier;
+
 
 public class CustomerTest {
 
