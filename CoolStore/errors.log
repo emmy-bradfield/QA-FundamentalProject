@@ -1,57 +1,50 @@
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java36 - id:1 first name:jordan surname:harrison
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java46 - Please enter a first name
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java48 - Please enter a surname
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java51 - Customer created
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java78 - Please enter the id of the customer you would like to delete
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java60 - Please enter the id of the customer you would like to update
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java62 - Please enter a first name
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java64 - Please enter a surname
-20220722 09:28:42 INFO  [main] controller.CustomerController CustomerController.java67 - Customer Updated
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:44 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:45 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:46 DEBUG [main] dao.CustomerDAO CustomerDAO.java125 - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`coolstore`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerID`) REFERENCES `customers` (`id`))
-20220722 09:28:46 ERROR [main] dao.CustomerDAO CustomerDAO.java126 - Cannot delete or update a parent row: a foreign key constraint fails (`coolstore`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerID`) REFERENCES `customers` (`id`))
-20220722 09:28:46 DEBUG [main] utils.DBUtils DBUtils.java67 - java.io.FileNotFoundException: src\test\resources\CoolStoreDBsql (The system cannot find the file specified)
-20220722 09:28:46 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Unknown column 'value' in 'field list'
-20220722 09:28:46 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: Table 'coolstore.orderitem' doesn't exist
-20220722 09:28:46 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: PROCEDURE coolstore.ordercompiler does not exist
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java31 - id: 1 product: cheese cost: 2.49
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java41 - Please the product name
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java43 - Please enter the product cost
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java46 - Product created
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java73 - Please enter the id of the product you would like to delete
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java55 - Please enter the id of the item you would like to update
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java57 - Please enter the name
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java59 - Please enter the value
-20220722 09:28:46 INFO  [main] controller.ItemController ItemController.java62 - Product Updated
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java29 - id: null customer: 1 item: 1 quantity: 2 transaction: 1
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java36 - Please the ID of the customer who placed the order
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java38 - Please enter the ID for the first product
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java40 - Please enter the quantity purchased
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java42 - Please enter the reference for the transaction this purchase relates to
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java45 - Order created
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java68 - Please enter the id of the order you would like to delete
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java51 - Please the ID of the order you wish to update
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java53 - Please the ID of the customer who placed the order
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java55 - Please enter the ID for the first product
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java57 - Please enter the quantity purchased
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java59 - Please enter the reference for the transaction this purchase relates to
-20220722 09:28:46 INFO  [main] controller.OrderController OrderController.java62 - Order updated
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java36 - id:1 first name:jordan surname:harrison
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java46 - Please enter a first name
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java48 - Please enter a surname
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java51 - Customer created
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java78 - Please enter the id of the customer you would like to delete
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java60 - Please enter the id of the customer you would like to update
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java62 - Please enter a first name
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java64 - Please enter a surname
+20220722 14:13:06 INFO  [main] controller.CustomerController CustomerController.java67 - Customer Updated
+20220722 14:13:11 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:14 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:18 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:20 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:23 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:26 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:29 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:29 INFO  [main] controller.ItemController ItemController.java31 - id: 1 product: cheese cost: 2.49
+20220722 14:13:29 INFO  [main] controller.ItemController ItemController.java41 - Please the product name
+20220722 14:13:29 INFO  [main] controller.ItemController ItemController.java43 - Please enter the product cost
+20220722 14:13:29 INFO  [main] controller.ItemController ItemController.java46 - Product created
+20220722 14:13:30 INFO  [main] controller.ItemController ItemController.java73 - Please enter the id of the product you would like to delete
+20220722 14:13:30 INFO  [main] controller.ItemController ItemController.java55 - Please enter the id of the item you would like to update
+20220722 14:13:30 INFO  [main] controller.ItemController ItemController.java57 - Please enter the name
+20220722 14:13:30 INFO  [main] controller.ItemController ItemController.java59 - Please enter the value
+20220722 14:13:30 INFO  [main] controller.ItemController ItemController.java62 - Product Updated
+20220722 14:13:32 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:34 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:37 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:40 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:43 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:46 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:49 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:52 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:55 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:13:57 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:14:00 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:14:03 DEBUG [main] utils.DBUtils DBUtils.java62 - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ASSELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`FROM orders oJOIN items' at line 1
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java29 - id: null customer: 1 item: 1 quantity: 2 transaction: 1
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java36 - Please the ID of the customer who placed the order
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java38 - Please enter the ID for the first product
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java40 - Please enter the quantity purchased
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java42 - Please enter the reference for the transaction this purchase relates to
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java45 - Order created
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java68 - Please enter the id of the order you would like to delete
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java51 - Please the ID of the order you wish to update
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java53 - Please the ID of the customer who placed the order
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java55 - Please enter the ID for the first product
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java57 - Please enter the quantity purchased
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java59 - Please enter the reference for the transaction this purchase relates to
+20220722 14:14:03 INFO  [main] controller.OrderController OrderController.java62 - Order updated

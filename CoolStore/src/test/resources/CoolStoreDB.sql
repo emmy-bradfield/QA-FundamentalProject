@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS `items`;
 CREATE TABLE IF NOT EXISTS `items`(
 	`id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(40) NOT NULL,
-    `cost` DOUBLE DEFAULT 0,
+    `cost` DOUBLE NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -33,10 +33,11 @@ CREATE TABLE IF NOT EXISTS `orders`(
     FOREIGN KEY (`itemID`) REFERENCES `items`(`id`)
 );
 
-DROP VIEW Calculator;
-CREATE VIEW Calculator
+CREATE VIEW `Calculator` 
 AS
 SELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`
 FROM orders o
 JOIN items i ON o.itemID=i.id
 GROUP BY o.ref;
+;
+

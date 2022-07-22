@@ -8,7 +8,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.qa.coolstore.persistence.dao.CustomerDAO;
 import com.qa.coolstore.persistence.domain.Customer;
 import com.qa.coolstore.utils.DBUtils;
 
@@ -19,7 +18,7 @@ public class CustomerDAOTest {
 	@Before
 	public void setup() {
 		DBUtils.connect();
-		DBUtils.getInstance().init("src/test/resources/CoolStoreDBsql", "src/test/resources/CoolStoreData.sql");
+		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "src/test/resources/CoolStoreData.sql");
 	}
 
 	@Test

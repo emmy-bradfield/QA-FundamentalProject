@@ -1,45 +1,63 @@
 package com.qa.coolstore.persistence.domain;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Scanner;
+import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.qa.coolstore.utils.DBUtils;
-import com.qa.coolstore.utils.Utils;
+import com.qa.coolstore.persistence.dao.ItemDAO;
+import com.qa.coolstore.persistence.dao.OrderDAO;
 
 public class Calculator {
-	public static final Logger LOGGER = LogManager.getLogger();
-	public static Scanner scan = new Scanner(System.in);
-	static Long id;
+	final OrderDAO orderDAO = new OrderDAO();
+	final ItemDAO itemDAO = new ItemDAO();
 
-	public Calculator(Utils util) {
-		calculator(util);
+	public Calculator() {
 	}
 
-	public static void calculator(Utils util) {
-		LOGGER.info("Please enter the reference number for the order you wish to cost");
-		Long id = util.getLong();
-		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM Calculator WHERE ref = ?");) {
-			statement.setLong(1, id);
-			ResultSet resultSet = statement.executeQuery();
-			resultSet.next();
-			modelFromResultSet(resultSet);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public Double calculate(Long id) {
+		List<Order> orders = orderDAO.readAll();
+		Double total = 0.0;
+		for (Order order : orders) {
+			if (order.getRef() == id) {
+				Long itemID = order.getItemID();
+				Long quant = order.getItemAmount();
+				Double cost = costItem(itemID);
+				total = total + (cost*quant);
+			}
 		}
-
+		return total;
 	}
 
-	private static void modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long ref = resultSet.getLong("ref");
-		Double cost = resultSet.getDouble("total");
-		System.out.println("The total cost for order #" + ref + " is £" + cost);
+	public Double costItem(Long itemID) {
+		Double value = null;
+		List<Item> items = itemDAO.readAll();
+		for (Item item : items) {
+			if (item.getId() == itemID) {
+				value = item.getCost();
+			}
+		}
+		return value;
 	}
-
 }
+
+//	public Double calculate(Long id) {
+//		try (Connection connection = DBUtils.getInstance().getConnection();
+//				PreparedStatement statement = connection.prepareStatement("SELECT total FROM Calculator WHERE ref = ?");) {
+//			statement.setLong(1, id);
+//			ResultSet resultSet = statement.executeQuery();
+//			resultSet.next();
+//			Double cost = getCost(resultSet);
+//			return cost;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return 0.0;
+//
+//	}
+
+//	Long getID(Long id) {
+//		return id;
+//	}
+//
+//	private static double getCost(ResultSet resultSet) throws SQLException {
+//		Double cost = resultSet.getDouble("total");
+//		return cost;
+//	}

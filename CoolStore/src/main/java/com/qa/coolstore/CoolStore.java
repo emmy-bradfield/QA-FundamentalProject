@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.coolstore.controller.Action;
+import com.qa.coolstore.controller.CalcController;
 import com.qa.coolstore.controller.CrudController;
 import com.qa.coolstore.controller.CustomerController;
 import com.qa.coolstore.controller.ItemController;
@@ -11,7 +12,6 @@ import com.qa.coolstore.controller.OrderController;
 import com.qa.coolstore.persistence.dao.CustomerDAO;
 import com.qa.coolstore.persistence.dao.ItemDAO;
 import com.qa.coolstore.persistence.dao.OrderDAO;
-import com.qa.coolstore.persistence.domain.Calculator;
 import com.qa.coolstore.persistence.domain.Domain;
 import com.qa.coolstore.utils.DBUtils;
 import com.qa.coolstore.utils.Utils;
@@ -24,6 +24,7 @@ public class CoolStore {
 	private final ItemController items;
 	private final OrderController orders;
 	private final Utils utils;
+	private final CalcController calc;
 
 	public CoolStore() {
 		this.utils = new Utils();
@@ -33,6 +34,7 @@ public class CoolStore {
 		this.customers = new CustomerController(custDAO, utils);
 		this.items = new ItemController(itemDAO, utils);
 		this.orders = new OrderController(orderDAO, utils);
+		this.calc = new CalcController();
 	}
 
 	public void imsSystem() {
@@ -47,7 +49,7 @@ public class CoolStore {
 			domain = Domain.getDomain(utils);
 
 			if (domain == Domain.CALCULATOR) {
-				new Calculator(utils);
+				calc.calculate();
 			} else {
 
 				domainAction(domain);
