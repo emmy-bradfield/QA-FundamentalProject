@@ -9,6 +9,10 @@ import com.qa.coolstore.persistence.dao.OrderDAO;
 import com.qa.coolstore.persistence.domain.Order;
 import com.qa.coolstore.utils.Utils;
 
+/**
+ * Takes in order details for CRUD functionality
+ *
+ */
 public class OrderController implements CrudController<Order> {
 
 	public static final Logger LOGGER = LogManager.getLogger();
@@ -21,7 +25,9 @@ public class OrderController implements CrudController<Order> {
 		this.orderDAO = orderDAO;
 		this.utils = utils;
 	}
-
+	/**
+	 * Reads all orders to the logger
+	 */
 	@Override
 	public List<Order> readAll() {
 		List<Order> orders = orderDAO.readAll();
@@ -30,7 +36,9 @@ public class OrderController implements CrudController<Order> {
 		}
 		return orders;
 	}
-
+	/**
+	 * Creates an order by taking in user input
+	 */
 	@Override
 	public Order create() {
 		LOGGER.info("Please the ID of the customer who placed the order");
@@ -45,7 +53,9 @@ public class OrderController implements CrudController<Order> {
 		LOGGER.info("Order created");
 		return order;
 	}
-
+	/**
+	 * Updates an existing order by taking in user input
+	 */
 	@Override
 	public Order update() {
 		LOGGER.info("Please the ID of the order you wish to update");
@@ -62,6 +72,12 @@ public class OrderController implements CrudController<Order> {
 		LOGGER.info("Order updated");
 		return order;
 	}
+	
+	/**
+	 * Deletes an existing order by the id of the customer
+	 * 
+	 * @return 1 - indicates success
+	 */
 
 	@Override
 	public int delete() {

@@ -17,6 +17,12 @@ import com.qa.coolstore.persistence.dao.CustomerDAO;
 import com.qa.coolstore.persistence.domain.Customer;
 import com.qa.coolstore.utils.Utils;
 
+/**
+ * Uses Mockito to ensure that the CustomerController executes their CRUD commands
+ * through the use of the DAO classes, ensuring communication with the SQL
+ * database
+ * 
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerControllerTest {
 

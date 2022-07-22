@@ -4,6 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * 
+ * Persists changes to the SQL database
+ *
+ * @param <T> (Customer, Item, or Order)
+ */
 public interface Dao<T> {
 List<T> readAll();
 	

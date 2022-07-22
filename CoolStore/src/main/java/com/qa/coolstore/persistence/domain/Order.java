@@ -1,5 +1,10 @@
 package com.qa.coolstore.persistence.domain;
 
+/**
+ * Order object, models SQL entity, includes constructors and getters &
+ * setters, as well as hashcode, equals, and tostring overwrites
+ *
+ */
 public class Order {
 
 	private Long id;
@@ -15,7 +20,7 @@ public class Order {
 		this.setItemAmount(itemAmount);
 		this.setRef(ref);
 	}
-	
+
 	public Order(Long customerID, Long itemID, Long itemAmount, Long ref) {
 		this.setCustomerID(customerID);
 		this.setItemID(itemID);
@@ -42,10 +47,10 @@ public class Order {
 		this.customerID = customerID;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "id: " + id + " customer: " + customerID + " item: " + itemID + " quantity: " + itemAmount + " transaction: " + ref;
+		return "id: " + id + " customer: " + customerID + " item: " + itemID + " quantity: " + itemAmount
+				+ " transaction: " + ref;
 	}
 
 	@Override

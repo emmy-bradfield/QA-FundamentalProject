@@ -18,7 +18,11 @@ public class CustomerDAO implements Dao<Customer> {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-
+	/**
+	 * models the SQL resultset into a human-readable string
+	 * 
+	 * @return a customer
+	 */
 	@Override
 	public Customer modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
@@ -50,6 +54,12 @@ public class CustomerDAO implements Dao<Customer> {
 		return new ArrayList<>();
 	}
 
+	
+	/**
+	 * Reads the latest customer added to the database
+	 * 
+	 * @return a customer
+	 */
 	public Customer readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
@@ -63,7 +73,11 @@ public class CustomerDAO implements Dao<Customer> {
 		return null;
 	}
 
-
+	/**
+	 * Creates a new customer in the database
+	 * 
+	 * @return a customer
+	 */
 	@Override
 	public Customer create(Customer customer) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -80,7 +94,11 @@ public class CustomerDAO implements Dao<Customer> {
 		return null;
 	}
 
-
+	/*
+	 * Reads a customer given an id 
+	 * 
+	 * @return a customer
+	 */
 	@Override
 	public Customer read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -97,6 +115,11 @@ public class CustomerDAO implements Dao<Customer> {
 		return null;
 	}
 
+	/**
+	 * Updates an existing customer in the database
+	 * 
+	 * @return updated customer
+	 */
 	@Override
 	public Customer update(Customer customer) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -115,6 +138,12 @@ public class CustomerDAO implements Dao<Customer> {
 	}
 
 
+	/**
+	 * deletes a customer given their id
+	 * 
+	 * @return 1 - success
+	 */
+	
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();

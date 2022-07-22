@@ -5,6 +5,13 @@ import java.util.List;
 import com.qa.coolstore.persistence.dao.ItemDAO;
 import com.qa.coolstore.persistence.dao.OrderDAO;
 
+/**
+ * Calculator object, takes in an order references and locates & costs all
+ * orders with that reference
+ * 
+ * @author EmmyB
+ *
+ */
 public class Calculator {
 	final OrderDAO orderDAO = new OrderDAO();
 	final ItemDAO itemDAO = new ItemDAO();
@@ -12,6 +19,13 @@ public class Calculator {
 	public Calculator() {
 	}
 
+	/**
+	 * Takes an id in from the user and searching all orders from the database for
+	 * matching references to pull a cost and quantity from
+	 * 
+	 * @param id
+	 * @return total cost for all orders with reference
+	 */
 	public Double calculate(Long id) {
 		List<Order> orders = orderDAO.readAll();
 		Double total = 0.0;
@@ -20,12 +34,19 @@ public class Calculator {
 				Long itemID = order.getItemID();
 				Long quant = order.getItemAmount();
 				Double cost = costItem(itemID);
-				total = total + (cost*quant);
+				total = total + (cost * quant);
 			}
 		}
 		return total;
 	}
 
+	/**
+	 * Finds the cost of an item from the Items database/table given the item ID
+	 * from the calculate() function
+	 * 
+	 * @param itemID of all items with given order reference
+	 * @return value of the item
+	 */
 	public Double costItem(Long itemID) {
 		Double value = null;
 		List<Item> items = itemDAO.readAll();

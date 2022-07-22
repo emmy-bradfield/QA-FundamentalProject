@@ -16,6 +16,11 @@ import com.qa.coolstore.persistence.domain.Domain;
 import com.qa.coolstore.utils.DBUtils;
 import com.qa.coolstore.utils.Utils;
 
+/**
+ * Takes user input and delegates to appropriate class to execute actions and
+ * access the database
+ *
+ */
 public class CoolStore {
 
 	public static final Logger LOGGER = LogManager.getLogger();
@@ -37,6 +42,10 @@ public class CoolStore {
 		this.calc = new CalcController();
 	}
 
+	/**
+	 * Asks the user which domain they wish to access then feeds the input to the
+	 * domainAction() function
+	 */
 	public void imsSystem() {
 		LOGGER.info("Welcome to the Inventory Management System!");
 		DBUtils.connect();
@@ -58,6 +67,12 @@ public class CoolStore {
 		} while (domain != Domain.STOP);
 	}
 
+	/**
+	 * Takes user input to determine what action to execute within that doman, then
+	 * feeds to the doAction() function
+	 * 
+	 * @param domain
+	 */
 	private void domainAction(Domain domain) {
 		boolean changeDomain = false;
 		do {
@@ -92,6 +107,13 @@ public class CoolStore {
 		} while (!changeDomain);
 	}
 
+	/**
+	 * Instigates the appropriate CRUD Controller based on the domain and action
+	 * input from the user
+	 * 
+	 * @param crudController
+	 * @param action
+	 */
 	public void doAction(CrudController<?> crudController, Action action) {
 		switch (action) {
 		case CREATE:

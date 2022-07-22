@@ -16,7 +16,12 @@ import com.qa.coolstore.controller.ItemController;
 import com.qa.coolstore.persistence.dao.ItemDAO;
 import com.qa.coolstore.persistence.domain.Item;
 import com.qa.coolstore.utils.Utils;
-
+/**
+ * Uses Mockito to ensure that the ItemController executes their CRUD commands
+ * through the use of the DAO classes, ensuring communication with the SQL
+ * database
+ * 
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class ItemControllerTest {
 	

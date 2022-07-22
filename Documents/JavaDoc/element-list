@@ -1,0 +1,6 @@
+com.qa.coolstore
+com.qa.coolstore.controller
+com.qa.coolstore.controllers
+com.qa.coolstore.persistence.dao
+com.qa.coolstore.persistence.domain
+com.qa.coolstore.utils

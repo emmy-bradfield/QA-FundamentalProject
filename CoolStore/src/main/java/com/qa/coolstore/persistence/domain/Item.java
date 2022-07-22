@@ -1,11 +1,16 @@
 package com.qa.coolstore.persistence.domain;
 
+/**
+ * Item object, models SQL entity, includes constructors and getters &
+ * setters, as well as hashcode, equals, and tostring overwrites
+ * 
+ */
 public class Item {
-	
+
 	private Long id;
 	private String name;
 	private Double cost;
-	
+
 	public Item(String name, Double cost) {
 		this.setName(name);
 		this.setCost(cost);
@@ -40,7 +45,7 @@ public class Item {
 	public void setCost(Double cost) {
 		this.cost = cost;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "id: " + id + " product: " + name + " cost: " + cost;
@@ -84,4 +89,3 @@ public class Item {
 	}
 
 }
-

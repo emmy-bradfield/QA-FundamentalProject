@@ -9,6 +9,11 @@ import com.qa.coolstore.persistence.dao.ItemDAO;
 import com.qa.coolstore.persistence.domain.Item;
 import com.qa.coolstore.utils.Utils;
 
+/**
+ * Takes in item details for CRUD functionality
+ *
+ */
+
 public class ItemController implements CrudController<Item>{
 	public static final Logger LOGGER = LogManager.getLogger();
 
@@ -22,7 +27,7 @@ public class ItemController implements CrudController<Item>{
 	}
 
 	/**
-	 * Reads all customers to the logger
+	 * Reads all items to the logger
 	 */
 	@Override
 	public List<Item> readAll() {
@@ -34,7 +39,7 @@ public class ItemController implements CrudController<Item>{
 	}
 
 	/**
-	 * Creates a customer by taking in user input
+	 * Creates an item by taking in user input
 	 */
 	@Override
 	public Item create() {
@@ -48,7 +53,7 @@ public class ItemController implements CrudController<Item>{
 	}
 
 	/**
-	 * Updates an existing customer by taking in user input
+	 * Updates an existing item by taking in user input
 	 */
 	@Override
 	public Item update() {
@@ -64,9 +69,9 @@ public class ItemController implements CrudController<Item>{
 	}
 
 	/**
-	 * Deletes an existing customer by the id of the customer
+	 * Deletes an existing item by the id of the customer
 	 * 
-	 * @return
+	 * @return 1 - indicates success
 	 */
 	@Override
 	public int delete() {

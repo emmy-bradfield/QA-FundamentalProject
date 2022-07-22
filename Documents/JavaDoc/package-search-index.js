@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.qa.coolstore.controller"},{"l":"com.qa.coolstore.controllers"},{"l":"com.qa.coolstore.persistence.dao"},{"l":"com.qa.coolstore.persistence.domain"},{"l":"com.qa.coolstore.utils"}];updateSearchResults();

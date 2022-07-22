@@ -11,13 +11,25 @@ import org.junit.Test;
 import com.qa.coolstore.persistence.domain.Order;
 import com.qa.coolstore.utils.DBUtils;
 
+/**
+ * Confirms that the data given in the test matches the data pulled from the
+ * database, ensuring the OrderDAO accurately updates the database, and reads
+ * from it, rather than simply creating new objects
+ * 
+ *
+ */
 public class OrderDAOTest {
 	private final OrderDAO DAO = new OrderDAO();
 
+	/**
+	 * Connects to the database and triggers a scheme to inject a new customer, new
+	 * items, and new orders entry
+	 */
 	@Before
 	public void setup() {
 		DBUtils.connect();
-		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "src/test/resources/CoolStoreData-orderOnly.sql");
+		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql",
+				"src/test/resources/CoolStoreData-orderOnly.sql");
 	}
 
 	@Test

@@ -11,10 +11,21 @@ import org.junit.Test;
 import com.qa.coolstore.persistence.domain.Customer;
 import com.qa.coolstore.utils.DBUtils;
 
+/**
+ * Confirms that the data given in the test matches the data pulled from the
+ * database, ensuring the CustomerDAO accurately updates the database, and reads
+ * from it, rather than simply creating new objects
+ * 
+ *
+ */
 public class CustomerDAOTest {
 
 	private final CustomerDAO DAO = new CustomerDAO();
 
+	/**
+	 * Connects to the database and triggers a scheme to inject a new customer and
+	 * new item entry
+	 */
 	@Before
 	public void setup() {
 		DBUtils.connect();

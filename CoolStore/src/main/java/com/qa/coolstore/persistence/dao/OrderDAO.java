@@ -17,6 +17,12 @@ import com.qa.coolstore.utils.DBUtils;
 public class OrderDAO implements Dao<Order> {
 	public static final Logger LOGGER = LogManager.getLogger();
 
+	/**
+	 * Reads all orders from the database
+	 * 
+	 * @return A list of orders
+	 */
+
 	@Override
 	public List<Order> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -34,6 +40,11 @@ public class OrderDAO implements Dao<Order> {
 		return new ArrayList<>();
 	}
 
+	/*
+	 * Reads an order given an id 
+	 * 
+	 * @return an order
+	 */
 	@Override
 	public Order read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -50,6 +61,11 @@ public class OrderDAO implements Dao<Order> {
 		return null;
 	}
 
+	/**
+	 * reads the latest order added to the database
+	 * 
+	 * @return an order
+	 */
 	public Order readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
@@ -63,6 +79,11 @@ public class OrderDAO implements Dao<Order> {
 		return null;
 	}
 
+	/**
+	 * Creates a new order in the database
+	 * 
+	 * @return an order
+	 * */
 	@Override
 	public Order create(Order order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -81,6 +102,11 @@ public class OrderDAO implements Dao<Order> {
 		return null;
 	}
 
+	/**
+	 * Updates an existing order in the database
+	 * 
+	 * @return updated order
+	 * */	
 	@Override
 	public Order update(Order order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -100,6 +126,11 @@ public class OrderDAO implements Dao<Order> {
 		return null;
 	}
 
+	/**
+	 * deletes an order given their id
+	 * 
+	 * @return 1 - success
+	 */
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -113,6 +144,11 @@ public class OrderDAO implements Dao<Order> {
 		return 0;
 	}
 
+	/**
+	 * models the SQL resultset into a human-readable string
+	 * 
+	 * @return an order
+	 */
 	@Override
 	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");

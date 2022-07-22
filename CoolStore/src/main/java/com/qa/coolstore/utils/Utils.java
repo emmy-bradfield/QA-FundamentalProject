@@ -5,8 +5,15 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Utils tool - accesses the scanner and converts user input to a Long, String,
+ * or Double to be called by other classes
+ * 
+ * @author EmmyB
+ *
+ */
 public class Utils {
-	
+
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	private final Scanner scanner;

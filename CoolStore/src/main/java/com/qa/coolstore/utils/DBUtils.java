@@ -13,6 +13,11 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * SQL Connection Utility - allows users to connect to the database by editing
+ * the db.properties file, as well as specifying commands to run
+ *
+ */
 public class DBUtils {
 
 	private static final Logger LOGGER = LogManager.getLogger();

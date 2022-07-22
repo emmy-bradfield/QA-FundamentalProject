@@ -1,5 +1,10 @@
 package com.qa.coolstore.persistence.domain;
 
+/**
+ * Customer object, models SQL entity, includes constructors and getters &
+ * setters, as well as hashcode, equals, and tostring overwrites
+ *
+ */
 public class Customer {
 
 	private Long id;

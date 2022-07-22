@@ -16,7 +16,12 @@ import com.qa.coolstore.controller.OrderController;
 import com.qa.coolstore.persistence.dao.OrderDAO;
 import com.qa.coolstore.persistence.domain.Order;
 import com.qa.coolstore.utils.Utils;
-
+/**
+ * Uses Mockito to ensure that the OrderController executes their CRUD commands
+ * through the use of the DAO classes, ensuring communication with the SQL
+ * database
+ * 
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class OrderControllerTest {
 

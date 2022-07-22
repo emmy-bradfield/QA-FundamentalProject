@@ -5,11 +5,15 @@ import org.apache.logging.log4j.Logger;
 
 import com.qa.coolstore.utils.Utils;
 
-
+/**
+ * Domain is a collection of commands which are used to determine the domain to
+ * apply a function to
+ *
+ */
 public enum Domain {
 
-	CUSTOMER("Information about customers"), ITEM("Individual Items"), ORDER("Purchases of items"), CALCULATOR ("Calculate the total of an existing order"),
-	STOP("To close the application");
+	CUSTOMER("Information about customers"), ITEM("Individual Items"), ORDER("Purchases of items"),
+	CALCULATOR("Calculate the total of an existing order"), STOP("To close the application");
 
 	public static final Logger LOGGER = LogManager.getLogger();
 

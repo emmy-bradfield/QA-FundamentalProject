@@ -17,6 +17,12 @@ import com.qa.coolstore.utils.DBUtils;
 public class ItemDAO implements Dao<Item> {
 	public static final Logger LOGGER = LogManager.getLogger();
 
+	/**
+	 * Reads all items from the database
+	 * 
+	 * @return A list of items
+	 */
+
 	@Override
 	public List<Item> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -33,7 +39,11 @@ public class ItemDAO implements Dao<Item> {
 		}
 		return new ArrayList<>();
 	}
-
+	/*
+	 * Reads an item given an id 
+	 * 
+	 * @return an item
+	 */
 	@Override
 	public Item read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -49,7 +59,11 @@ public class ItemDAO implements Dao<Item> {
 		}
 		return null;
 	}
-	
+	/**
+	 * reads the latest item added to the database
+	 * 
+	 * @return an item
+	 */
 	public Item readLatest() {
 	try (Connection connection = DBUtils.getInstance().getConnection();
 			Statement statement = connection.createStatement();
@@ -62,7 +76,12 @@ public class ItemDAO implements Dao<Item> {
 	}
 	return null;
 }
-
+	
+	/**
+	 * Creates a new item in the database
+	 * 
+	 * @return an item
+	 * */
 	@Override
 	public Item create(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -78,7 +97,11 @@ public class ItemDAO implements Dao<Item> {
 		}
 		return null;
 	}
-
+	/**
+	 * Updates an existing item in the database
+	 * 
+	 * @return updated item
+	 * */	
 	@Override
 	public Item update(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -96,6 +119,11 @@ public class ItemDAO implements Dao<Item> {
 		return null;
 	}
 
+	/**
+	 * deletes an item given their id
+	 * 
+	 * @return 1 - success
+	 */
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -109,6 +137,11 @@ public class ItemDAO implements Dao<Item> {
 		return 0;
 	}
 
+	/**
+	 * models the SQL resultset into a human-readable string
+	 * 
+	 * @return an item
+	 */
 	@Override
 	public Item modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
