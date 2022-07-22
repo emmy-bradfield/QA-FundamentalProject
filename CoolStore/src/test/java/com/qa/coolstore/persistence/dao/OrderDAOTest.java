@@ -17,7 +17,7 @@ public class OrderDAOTest {
 	@Before
 	public void setup() {
 		DBUtils.connect();
-		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "src/test/resources/CoolStoreData-orderOnly.sql");
+		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "CoolStoreData-orderOnly.sql");
 	}
 
 	@Test
@@ -57,5 +57,3 @@ public class OrderDAOTest {
 	}
 
 }
-
-// java.lang.AssertionError: expected:<id: null customer: 1 item: 2 quantity: 2 transaction: 1> but was:<id: 2 customer: 1 item: 2 quantity: 2 transaction: 1>
