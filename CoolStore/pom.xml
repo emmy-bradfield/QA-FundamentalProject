@@ -1,16 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qa</groupId>
-  <artifactId>CoolStore</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>CoolStore (Function Project)</name>
-  
-  
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qa</groupId>
+	<artifactId>CoolStore</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>CoolStore (Function Project)</name>
+
+
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>nl.jqno.equalsverifier</groupId>
@@ -28,7 +27,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.19</version>
+			<version>8.0.29</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -47,7 +46,13 @@
 			<version>3.7.7</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -55,16 +60,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<!-- Creates a jar for the code (does not contain other dependencies which 
-				are needed for the project to run out of the box) -->
+                are needed for the project to run out of the box) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.2.0</version>
-
 				<configuration>
 					<archive>
 						<manifest>
@@ -73,9 +76,8 @@
 					</archive>
 				</configuration>
 			</plugin>
-
 			<!-- Creates a "fat jar" with jar-with-dependencies at the end of the 
-				project jar -->
+                project jar -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -96,8 +98,8 @@
 							<archive>
 								<manifest>
 									<mainClass>
-										com.qa.coolstore.Main
-									</mainClass>
+                                        com.qa.coolstore.Main
+                                    </mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -106,6 +108,34 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<!-- Plugin for code coverage. Useful as sonarqube integrates well with 
+                jacoco -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Plugin to send files -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.0.0-M1</version>
 			</plugin>
 		</plugins>
 	</build>

@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS CoolStore;
 CREATE DATABASE IF NOT EXISTS CoolStore;
 USE CoolStore;
 
-DROP TABLE IF EXISTS `customers`;
+DROP TABLE IF EXISTS `customers` CASCADE;
 
 CREATE TABLE IF NOT EXISTS `customers` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
     PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `items`;
+DROP TABLE IF EXISTS `items` CASCADE;
 
 CREATE TABLE IF NOT EXISTS `items`(
 	`id` INT NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `items`(
     PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `orders` CASCADE;
 
 CREATE TABLE IF NOT EXISTS `orders`(
 	`id` INT NOT NULL AUTO_INCREMENT,
@@ -37,7 +37,7 @@ CREATE VIEW `Calculator`
 AS
 SELECT o.ref AS `ref`, (o.itemAmount*i.cost) AS `total`
 FROM orders o
-JOIN items i ON o.itemID=i.id
+JOIN items i ON o.itemID=i.id4
 GROUP BY o.ref;
 ;
 

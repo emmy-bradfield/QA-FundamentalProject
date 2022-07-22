@@ -18,7 +18,7 @@ public class CustomerDAOTest {
 	@Before
 	public void setup() {
 		DBUtils.connect();
-		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "CoolStoreData.sql");
+		DBUtils.getInstance().init("src/test/resources/CoolStoreDB.sql", "src/test/resources/CoolStoreData.sql");
 	}
 
 	@Test
