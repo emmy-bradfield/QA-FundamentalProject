@@ -159,11 +159,13 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qa</groupId>
-  <artifactId>CoolStore</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>CoolStore (Function Project)</name>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qa</groupId>
+	<artifactId>CoolStore</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>CoolStore (Function Project)</name>
+
+
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -185,7 +187,7 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.19</version>
+			<version>8.0.29</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -204,7 +206,13 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 			<version>3.7.7</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -215,7 +223,7 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 	<build>
 		<plugins>
 			<!-- Creates a jar for the code (does not contain other dependencies which 
-				are needed for the project to run out of the box) -->
+                are needed for the project to run out of the box) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -229,7 +237,7 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 				</configuration>
 			</plugin>
 			<!-- Creates a "fat jar" with jar-with-dependencies at the end of the 
-				project jar -->
+                project jar -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -250,8 +258,8 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 							<archive>
 								<manifest>
 									<mainClass>
-										com.qa.coolstore.Main
-									</mainClass>
+                                        com.qa.coolstore.Main
+                                    </mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -262,7 +270,7 @@ A few other plugins are used to ensure project success, and your pom.xml file sh
 				</executions>
 			</plugin>
 			<!-- Plugin for code coverage. Useful as sonarqube integrates well with 
-				jacoco -->
+                jacoco -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -303,6 +311,9 @@ Then execute the following comands to clean your target folder and package the p
 mvn clean
 mvn package
 ```
+You'll know it has worked successfully when the BUILD SUCCESS output is printed to the console, like so:
+
+<img src="Documents\assets\buildsuccess.png">
 
 From here, you can navigate to the location of the new .jar file using
 ```
@@ -314,6 +325,9 @@ Ensure that you have both the name-of-project.jar and name-of-project-with-depen
 ```
 java -jar name-of-project-with-dependencies.jar
 ```
+You should see the following in your CLI (note: file name changed to coolstoreIMS)
+
+<img src="documents/assets/output.png">
 
 ## Built With
 
