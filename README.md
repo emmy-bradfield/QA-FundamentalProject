@@ -327,7 +327,7 @@ java -jar name-of-project-with-dependencies.jar
 ```
 You should see the following in your CLI (note: file name changed to coolstoreIMS)
 
-<img src="documents/assets/output.png">
+<img src="Documents\assets\output.png">
 
 ## Built With
 
